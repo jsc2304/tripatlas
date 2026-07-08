@@ -39,6 +39,7 @@
     "rows": "Zeilen",
     "empty": "Keine Sync-Daten vorhanden.",
     "ok": "ok",
+    "deferred": "pausiert",
     "error": "error",
     "errorHint": "Fehlerdetails als Tooltip auf dem Status-Badge.",
     "resyncTrigger": "Jetzt neu synchronisieren",

@@ -92,10 +92,17 @@ export async function syncDriveWeather(
     const message = err instanceof Error ? err.message : String(err);
     if (message.includes("HTTP 429")) {
       backoffUntil = Date.now() + backoffMs;
+      const retryMinutes = Math.round(backoffMs / 60000);
       console.warn(
-        `[sync:driveWeather] Open-Meteo Rate-Limit — pausiere ${Math.round(backoffMs / 60000)} min`,
+        `[sync:driveWeather] Open-Meteo Rate-Limit — pausiere ${retryMinutes} min`,
       );
       backoffMs = Math.min(backoffMs * 4, RATE_LIMIT_BACKOFF_MAX_MS);
+      await recordSyncRun(db, SOURCE, ENTITY, {
+        status: "deferred",
+        error: `Open-Meteo API rate-limited; retrying in about ${retryMinutes} min`,
+        rowsUpserted: 0,
+      });
+      return { drivesFilled: 0 };
     }
     await recordSyncRun(db, SOURCE, ENTITY, {
       status: "error",

@@ -150,7 +150,12 @@ export default async function SettingsPage() {
                 </tr>
               )}
               {syncRows.map((row) => {
-                const ok = row.lastStatus === "ok";
+                const status =
+                  row.lastStatus === "ok"
+                    ? "ok"
+                    : row.lastStatus === "deferred"
+                      ? "deferred"
+                      : "error";
                 return (
                   <tr key={`${row.source}-${row.entity}`}>
                     <td className="max-w-[7.5rem] truncate py-2 pr-2 font-medium text-neutral-900 dark:text-neutral-100 sm:max-w-none sm:whitespace-nowrap">
@@ -161,14 +166,16 @@ export default async function SettingsPage() {
                     </td>
                     <td className="whitespace-nowrap py-2 pr-2">
                       <span
-                        title={!ok ? (row.lastError ?? undefined) : undefined}
+                        title={status !== "ok" ? (row.lastError ?? undefined) : undefined}
                         className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
-                          ok
+                          status === "ok"
                             ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
+                            : status === "deferred"
+                              ? "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300"
                             : "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300"
                         }`}
                       >
-                        {ok ? t("sync.ok") : t("sync.error")}
+                        {t(`sync.${status}`)}
                       </span>
                     </td>
                     <td className="hidden whitespace-nowrap py-2 pr-2 tabular-nums text-neutral-600 sm:table-cell dark:text-neutral-400">
@@ -183,7 +190,7 @@ export default async function SettingsPage() {
             </tbody>
           </table>
         </div>
-        {syncRows.some((r) => r.lastStatus !== "ok" && r.lastError) && (
+        {syncRows.some((r) => r.lastStatus === "error" && r.lastError) && (
           <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
             {t("sync.errorHint")}
           </p>

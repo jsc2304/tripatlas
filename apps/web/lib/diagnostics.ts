@@ -137,7 +137,7 @@ export function diagnosticsHints(
     hints.push(t("diagnostics.hints.stale"));
   }
 
-  if (summary.entities.some((e) => e.lastStatus !== "ok" && e.lastError)) {
+  if (summary.entities.some((e) => e.lastStatus === "error" && e.lastError)) {
     hints.push(t("diagnostics.hints.runFailed"));
   }
 

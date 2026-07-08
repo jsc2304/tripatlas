@@ -15,7 +15,7 @@ export async function getWatermark(
 
 export interface SyncRunResult {
   watermarkTs?: Date | null;
-  status: "ok" | "error";
+  status: "ok" | "error" | "deferred";
   error?: string;
   rowsUpserted: number;
 }
