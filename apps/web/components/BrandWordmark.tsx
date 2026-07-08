@@ -15,7 +15,7 @@ export function BrandWordmark({
 }) {
   return (
     <span
-      className={`inline-flex items-baseline font-[var(--font-brand-mono)] font-bold leading-none ${sizeClasses[size]} ${className}`}
+      className={`inline-flex items-baseline font-brand-mono font-bold leading-none ${sizeClasses[size]} ${className}`}
     >
       <span className="sr-only">Tripatlas</span>
       <span aria-hidden="true" className="inline-flex items-baseline">
