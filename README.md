@@ -3,93 +3,91 @@
 [![CI](https://github.com/jsc2304/tripatlas/actions/workflows/ci.yml/badge.svg)](https://github.com/jsc2304/tripatlas/actions/workflows/ci.yml)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](LICENSE)
 
-**Self-hosted Fahrtenarchiv & Analytics für Tesla.** Datum wählen, jede Fahrt des Tages sehen, klassifizieren, exportieren — deine Bewegungsdaten bleiben auf deinem Server.
+**Self-hosted trip archive and analytics for Tesla.** Pick a date, review every trip of the day, classify it, export it - your movement data stays on your server.
 
-Tripatlas liest die Datenbank einer bestehenden [TeslaMate](https://github.com/teslamate-org/teslamate)-Installation (read-only) und macht daraus ein durchsuchbares Fahrten-, Park- und Ladearchiv mit Tagesansicht, Orten, Tags, Auto-Klassifizierung und Business-Exporten (CSV/PDF/GPX). Kein Abo, keine Cloud, kein Tracking.
+Tripatlas reads the database of an existing [TeslaMate](https://github.com/teslamate-org/teslamate) installation in read-only mode and turns it into a searchable trip, parking, and charging archive with a daily timeline, places, tags, auto-classification, and business exports (CSV/PDF/GPX). No subscription, no cloud, no tracking.
 
-> *English: Tripatlas is a self-hosted trip archive and analytics UI on top of your existing TeslaMate database — day timeline, trip classification (logbook-style), tagging, charging analytics, journeys, exports (CSV/PDF/GPX), auto-classification rules, per-place charging costs, insights, dark mode, German/English UI. Read-only against TeslaMate, your data stays on your server.*
+## Why?
 
-## Warum?
-
-Tessie & Co. sind gut, aber: Abo-Kosten, Feature-Überschneidung mit der Tesla-App und Bewegungsdaten bei einem Drittanbieter. TeslaMate loggt hervorragend, hat aber keinen Workflow zum **Wiederfinden und Nachweisen** einzelner Fahrten. Tripatlas ist die Produkt-Schicht darüber.
+Tessie and similar services are good, but they come with subscription costs, overlap with features in the Tesla app, and put movement data with a third party. TeslaMate logs very well, but it does not provide a workflow for **finding and documenting** individual trips. Tripatlas is the product layer on top.
 
 ## Features
 
-**Fahrtenarchiv (der Kern)**
-- **Tagesansicht** — Datum wählen → jede Fahrt als atomarer Eintrag: `08:14–08:47 · Zuhause → Kunde Müller · 27,3 km · Geschäftlich`; Parken und Laden interleaved als Timeline
-- **Klassifizieren & Annotieren** — privat / geschäftlich / Arbeitsweg per Segmented Control, Zweck, Kunde, Projekt, Notizen, Tags; jede Änderung im Audit-Log
-- **Auto-Klassifizierungs-Regeln** — „Zuhause → Büro, Mo–Fr = Arbeitsweg": Regeln mit Orts- und Wochentags-Bedingungen klassifizieren neue Fahrten automatisch — und fassen nie an, was du manuell entschieden hast (Provenance im Audit-Log)
-- **Bulk-Bearbeitung** — viele Fahrten auf einmal auswählen und klassifizieren/taggen, in Tagesansicht und Suche
-- **Orte** — Geofences mit Karten-Picker und Adresssuche (OSM/Nominatim); manuelle Korrekturen mit Lock, die jeden Re-Sync überleben
-- **Kalender, Suche, Reports** — Monatsgrid mit Fahrt-Intensität; Volltextsuche über Orte/Kunden/Projekte/Tags mit Filtern; Monatsreports mit CSV-/PDF-Export (Fahrtenbuch-Stil)
+**Trip archive (the core)**
+- **Daily view** - Pick a date -> every trip as an atomic entry: `08:14-08:47 · Home -> Client Miller · 27.3 km · Business`; parking and charging are interleaved in one timeline
+- **Classify and annotate** - Private / business / commute via segmented control, purpose, client, project, notes, tags; every change is recorded in the audit log
+- **Auto-classification rules** - "Home -> Office, Mon-Fri = commute": rules with place and weekday conditions classify new trips automatically, and never touch anything you decided manually (provenance in the audit log)
+- **Bulk editing** - Select and classify/tag many trips at once in the daily view and search
+- **Places** - Geofences with map picker and address search (OSM/Nominatim); manual corrections with locks that survive every re-sync
+- **Calendar, search, reports** - Monthly grid with trip intensity; full-text search across places/clients/projects/tags with filters; monthly reports with CSV/PDF export in logbook style
 
-**Fahrt- & Lade-Analytics**
-- **Fahrt-Detail** — Route auf der Karte, kombinierter Verlaufs-Chart (Höhe/SoC/Tempo), Temperaturen, Max-Speed/-Leistung/Rekuperation, historisches Wetter zur Fahrtzeit, GPX-Export
-- **Ladeübersicht** — Ladekurve (kW über SoC), AC/DC, Kosten, Standort-Karte
-- **Automatische Ladekosten** — Strompreis pro Ort hinterlegen (z. B. Zuhause 0,32 €/kWh) → Sessions ohne bekannten Preis werden automatisch berechnet, manuelle und gesyncte Kosten bleiben unangetastet
-- **Journeys** — Urlaube/Reisen als Klammer über Fahrten + Ladestopps mit Kennzahlen-Dashboard, Karte aller Etappen und Export als CSV, PDF und GPX
-- **Insights** — persönliche Verbrauchskurve: Verbrauch vs. Außentemperatur und Tempo, Saisonmuster, Kurzstrecken-Anteil
-- **Standzeit-Analytics** — Vampir-Verlust pro Parkvorgang, Standzeiten pro Ort
-- **Routenplaner (experimentell)** — Reichweiten-Check mit echter Route (OSRM), Höhenprofil und deinem persönlichen Verbrauchsprofil aus der eigenen Historie; alle Annahmen offengelegt
+**Trip and charging analytics**
+- **Trip detail** - Route on the map, combined history chart (elevation/SoC/speed), temperatures, max speed/power/recuperation, historical weather at trip time, GPX export
+- **Charging overview** - Charging curve (kW over SoC), AC/DC, cost, location map
+- **Automatic charging costs** - Store an electricity price per place (for example home at EUR 0.32/kWh) -> sessions without a known price are calculated automatically, while manual and synced costs remain untouched
+- **Journeys** - Vacations/trips as a wrapper around drives and charging stops, with KPI dashboard, map of all stages, and export as CSV, PDF, and GPX
+- **Insights** - Personal consumption curve: consumption vs. outside temperature and speed, seasonal patterns, share of short trips
+- **Parking analytics** - Vampire drain per parking session, parking durations by place
+- **Route planner (experimental)** - Range check with a real route (OSRM), elevation profile, and your personal consumption profile from your own history; all assumptions are disclosed
 
-**Cockpit & Fahrzeug**
-- **Start-Dashboard** — SoC + Reichweite, Standort, Status, Wetter, Reifendruck mit Warnung, letzte Fahrten als Karte + Liste
-- **Software-Update-Historie** und Fahrzeugdaten in den Settings
-- **Verbindungs-Diagnose** — Sync-Gesundheit pro Datenquelle auf einen Blick, optionaler TeslaMate-Direkttest
+**Cockpit and vehicle**
+- **Home dashboard** - SoC + range, location, status, weather, tire pressure warnings, recent trips as map + list
+- **Software update history** and vehicle data in settings
+- **Connection diagnostics** - Sync health per data source at a glance, optional direct TeslaMate test
 
-**Oberfläche**
-- **Deutsch & Englisch** — umschaltbar im UI (Standard Deutsch)
-- **Dark Mode** — Hell/Dunkel/System-Switcher, ohne Flackern
-- **Mobile-first** — als PWA installierbar, 16px-Formularfelder (kein iOS-Zoom), Safe-Area-aware Bottom-Navigation
+**Interface**
+- **German and English** - Switchable in the UI (German by default)
+- **Dark mode** - Light/dark/system switcher without flicker
+- **Mobile-first** - Installable as a PWA, 16px form fields (no iOS zoom), safe-area-aware bottom navigation
 
-**Daten**
-- **Datenhoheit** — eigene PostgreSQL-DB, quellen-agnostisches Schema (`source`/`source_id`), Annotationen überleben strukturell jeden Re-Sync
-- **Tessie-Import** — rekonstruiert Fahrten/Ladungen aus einem Tessie-Rohdaten-Export (`import-tessie`-CLI), inkl. echter Energiewerte per Fahrzeug-Zähler
-- **Energie ehrlich** — echte Zählerwerte wo verfügbar, sonst gekennzeichnete Schätzung; Effizienz-Fallback in den Settings, bis TeslaMate den Fahrzeugwert gelernt hat
+**Data**
+- **Data ownership** - Your own PostgreSQL database, source-agnostic schema (`source`/`source_id`), annotations structurally survive every re-sync
+- **Tessie import** - Reconstructs trips/charging sessions from a Tessie raw data export (`import-tessie` CLI), including real energy values from vehicle counters
+- **Honest energy data** - Real counter values where available, otherwise clearly marked estimates; efficiency fallback in settings until TeslaMate has learned the vehicle value
 
-## Demo ohne Auto
+## Demo without a car
 
-Kein Tesla, kein TeslaMate? Der Demo-Stack startet eine komplett gefüllte App mit sechs Wochen synthetischer Fahrdaten:
+No Tesla, no TeslaMate? The demo stack starts a fully populated app with six weeks of synthetic driving data:
 
 ```bash
 docker compose -f docker-compose.demo.yml up -d --build
-# → http://localhost:3000, Login: demo1234
+# -> http://localhost:3000, login: demo1234
 ```
 
 Details: [docs/demo.md](docs/demo.md)
 
 ## Stack
 
-pnpm-Monorepo: Next.js 15 (`apps/web`) · Sync-Worker (`apps/worker`) · Drizzle-Schema (`packages/db`) · pure Domain-Logik (`packages/core`) · PostgreSQL 17 · Docker Compose.
+pnpm monorepo: Next.js 15 (`apps/web`) · sync worker (`apps/worker`) · Drizzle schema (`packages/db`) · pure domain logic (`packages/core`) · PostgreSQL 17 · Docker Compose.
 
-## Entwicklung
+## Development
 
-Ohne echtes Auto — eine Fixture-TeslaMate-DB mit 6 Wochen synthetischer Fahrdaten liegt bei:
+Without a real car - a fixture TeslaMate database with 6 weeks of synthetic driving data is included:
 
 ```bash
 pnpm install
 pnpm dev:db                                # tripatlas-db :5432 + fixture teslamate-db :5433
-pnpm db:seed:teslamate                     # ~140 Fahrten, Laden, Geofences (Raum Zürich)
+pnpm db:seed:teslamate                     # ~140 trips, charging, geofences (Zurich area)
 DATABASE_URL=postgres://tripatlas:tripatlas@localhost:5432/tripatlas pnpm db:migrate
-pnpm --filter @tripatlas/worker dev        # Sync-Loop (braucht DATABASE_URL + TESLAMATE_DATABASE_URL, siehe .env.example)
+pnpm --filter @tripatlas/worker dev        # Sync loop (needs DATABASE_URL + TESLAMATE_DATABASE_URL, see .env.example)
 pnpm --filter @tripatlas/web dev           # http://localhost:3000
 ```
 
-Tests: `pnpm test` · Typecheck: `pnpm lint` · Mehr: [CONTRIBUTING.md](CONTRIBUTING.md)
+Tests: `pnpm test` · typecheck: `pnpm lint` · more: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Deployment
 
-Docker Compose auf Home Server/NAS/Raspberry Pi im LAN oder VPN (z. B. Tailscale), angebunden an die bestehende TeslaMate-Postgres über eine read-only-Rolle.
+Docker Compose on a home server/NAS/Raspberry Pi in your LAN or VPN (for example Tailscale), connected to the existing TeslaMate Postgres through a read-only role.
 
-### Voraussetzungen
+### Requirements
 
-- Docker + Docker Compose (Plugin) auf dem Zielgerät (Raspberry Pi, NAS, Home Server)
-- ≥ 4 GB RAM
-- Eine laufende TeslaMate-Installation mit erreichbarer Postgres (LAN, VPN oder gleicher Docker-Host)
+- Docker + Docker Compose (plugin) on the target device (Raspberry Pi, NAS, home server)
+- >= 4 GB RAM
+- A running TeslaMate installation with reachable Postgres (LAN, VPN, or same Docker host)
 
-### 0. Noch kein TeslaMate? Mitinstallieren
+### 0. No TeslaMate yet? Install it too
 
-Ein minimales TeslaMate-Compose (ohne Grafana) liegt unter [deploy/teslamate/](deploy/teslamate/docker-compose.yml) — Anleitung im Datei-Kopf. Danach auf `http://<host>:4000` das Tesla-Konto anmelden. Damit Tripatlas die TeslaMate-DB über den Compose-Service-Namen `database` erreicht, im Tripatlas-Verzeichnis eine `docker-compose.override.yml` anlegen:
+A minimal TeslaMate Compose setup (without Grafana) is available under [deploy/teslamate/](deploy/teslamate/docker-compose.yml) - instructions are in the file header. Then sign in to the Tesla account at `http://<host>:4000`. To let Tripatlas reach the TeslaMate database through the Compose service name `database`, create a `docker-compose.override.yml` in the Tripatlas directory:
 
 ```yaml
 services:
@@ -101,45 +99,45 @@ networks:
     name: teslamate_default
 ```
 
-### 1. Read-only-Rolle auf der TeslaMate-DB anlegen
+### 1. Create a read-only role on the TeslaMate database
 
-Tripatlas liest die TeslaMate-DB nur — nie schreibend. Auf dem TeslaMate-Postgres ausführen:
+Tripatlas only reads the TeslaMate database - it never writes to it. Run this on the TeslaMate Postgres:
 
 ```sql
-CREATE ROLE tripatlas_ro WITH LOGIN PASSWORD 'ein-sicheres-passwort';
+CREATE ROLE tripatlas_ro WITH LOGIN PASSWORD 'a-secure-password';
 GRANT CONNECT ON DATABASE teslamate TO tripatlas_ro;
 GRANT USAGE ON SCHEMA public TO tripatlas_ro;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO tripatlas_ro;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO tripatlas_ro;
 ```
 
-### 2. `.env` einrichten
+### 2. Configure `.env`
 
 ```bash
 cp .env.example .env
 ```
 
-Mindestens setzen:
+Set at least:
 
-- `POSTGRES_PASSWORD` — Passwort für die neue tripatlas-eigene Postgres (Pflicht, kein Default)
-- `TESLAMATE_DATABASE_URL` — Connection-String der `tripatlas_ro`-Rolle gegen die TeslaMate-DB (LAN/Tailscale-Host oder Compose-Service-Name, siehe Kommentare in `docker-compose.yml`)
-- optional `WEB_PORT` (Default `3000`), `APP_TIMEZONE`, `SYNC_INTERVAL_SECONDS`, `OSRM_URL` (eigener Routing-Server für den Planer)
+- `POSTGRES_PASSWORD` - password for the new Tripatlas-owned Postgres (required, no default)
+- `TESLAMATE_DATABASE_URL` - connection string for the `tripatlas_ro` role against the TeslaMate database (LAN/Tailscale host or Compose service name, see comments in `docker-compose.yml`)
+- optional `WEB_PORT` (default `3000`), `APP_TIMEZONE`, `SYNC_INTERVAL_SECONDS`, `OSRM_URL` (your own routing server for the planner)
 
-### 3. Stack starten
+### 3. Start the stack
 
 ```bash
 docker compose up -d --build
 ```
 
-Das baut `apps/web` und `apps/worker`, lässt den `migrate`-Service einmalig die Drizzle-Migrationen einspielen (`restart: "no"`, muss erfolgreich durchlaufen) und startet dann `db`, `web` und `worker` dauerhaft (`restart: unless-stopped`).
+This builds `apps/web` and `apps/worker`, lets the `migrate` service apply Drizzle migrations once (`restart: "no"`, it must complete successfully), and then starts `db`, `web`, and `worker` permanently (`restart: unless-stopped`).
 
-### 4. Erstanmeldung
+### 4. First sign-in
 
-Beim ersten Start wird ein Admin-Account bootstrapped. Optional vorab ein Passwort über `INITIAL_ADMIN_PASSWORD` in `.env` setzen — sonst wird beim ersten Login-Flow eines gesetzt (mit Passwort-Wiederholung).
+On first startup, an admin account is bootstrapped. Optionally set a password beforehand through `INITIAL_ADMIN_PASSWORD` in `.env`; otherwise one is set during the first login flow (with password confirmation).
 
-### 5. HTTPS / Fernzugriff
+### 5. HTTPS / remote access
 
-Kein eigener Reverse Proxy im Compose-Stack. Empfehlung: [`tailscale serve`](https://tailscale.com/kb/1242/tailscale-serve) auf dem Zielgerät vor `${WEB_PORT}` schalten — TLS-Zertifikat und Zugriff nur im eigenen Tailnet, ohne offenen Port am Router.
+There is no built-in reverse proxy in the Compose stack. Recommendation: put [`tailscale serve`](https://tailscale.com/kb/1242/tailscale-serve) in front of `${WEB_PORT}` on the target device - TLS certificate and access only inside your own tailnet, without opening a router port.
 
 ### Update
 
@@ -148,7 +146,7 @@ git pull
 docker compose up -d --build
 ```
 
-Baut Images neu, spielt neue Migrationen über den `migrate`-Service ein, rollt `web`/`worker` neu aus.
+Rebuilds images, applies new migrations through the `migrate` service, and rolls out `web`/`worker` again.
 
 ### Backup
 
@@ -156,42 +154,42 @@ Baut Images neu, spielt neue Migrationen über den `migrate`-Service ein, rollt 
 docker compose exec db pg_dump -U tripatlas tripatlas > backup-$(date +%F).sql
 ```
 
-Die TeslaMate-Daten selbst sichert TeslaMate — Tripatlas sichert nur seine eigenen Annotationen, Places, Tags, Regeln und den Sync-State.
+TeslaMate backs up the TeslaMate data itself - Tripatlas only backs up its own annotations, places, tags, rules, and sync state.
 
-### Historie importieren (Tessie)
+### Import history (Tessie)
 
-Wer vorher Tessie genutzt hat, kann den Rohdaten-Export (CSV-Zeitreihen) importieren — Tripatlas rekonstruiert daraus Fahrten, Park- und Ladesessions:
+If you previously used Tessie, you can import the raw data export (CSV time series) - Tripatlas reconstructs trips, parking sessions, and charging sessions from it:
 
 ```bash
-docker compose run --rm -v /pfad/zum/tessie-export:/import:ro worker \
+docker compose run --rm -v /path/to/tessie-export:/import:ro worker \
   node dist/cli.js import-tessie /import
 ```
 
-Idempotent (mehrfacher Lauf unschädlich), kollidiert nicht mit TeslaMate-Daten.
+Idempotent (safe to run multiple times), does not collide with TeslaMate data.
 
-## Grenzen (ehrlich)
+## Limitations (honest)
 
-- **Braucht TeslaMate** als Datenquelle — Tripatlas spricht nicht selbst mit der Tesla-API und weckt dein Auto nie
-- **Ein Fahrzeug** pro Instanz im Fokus (Multi-Vehicle auf der Roadmap)
-- **Zahlenformatierung** aktuell durchgehend de-DE (Dezimalkomma), auch in der englischen UI
-- **Routenplaner** ist ein experimenteller Reichweiten-Check — keine Ladestopp-Planung, Standard-Routing über den öffentlichen OSRM-Demo-Server
-- **Kein steuerrechtliches Gutachten**: Exporte sind fahrtenbuch-artig mit Audit-Log, aber die Anerkennung beim Finanzamt ist einzelfallabhängig
+- **Requires TeslaMate** as a data source - Tripatlas does not talk to the Tesla API itself and never wakes your car
+- **One vehicle** per instance is the current focus (multi-vehicle is on the roadmap)
+- **Number formatting** is currently consistently de-DE (decimal comma), including in the English UI
+- **Route planner** is an experimental range check - no charging stop planning yet, default routing uses the public OSRM demo server
+- **No tax/legal opinion**: exports are logbook-like with audit log, but acceptance by the tax office depends on the individual case
 
 ## Roadmap
 
-- Ladestopp-Planung im Routenplaner (Ladekurven + Ladepark-Daten)
-- API/Webhooks für eigene Auswertungen
-- Kalenderintegration (Termine ↔ Fahrten)
-- Multi-Vehicle
-- 2FA, Backup-Automation
-- Weitere Import-Quellen (TeslaLogger, CSV)
+- Charging stop planning in the route planner (charging curves + charging park data)
+- API/webhooks for custom analytics
+- Calendar integration (events <-> trips)
+- Multi-vehicle
+- 2FA, backup automation
+- Additional import sources (TeslaLogger, CSV)
 
-## Mitmachen & Sicherheit
+## Contributing and Security
 
-- Beiträge: [CONTRIBUTING.md](CONTRIBUTING.md) · Issues gerne auf Deutsch oder Englisch
-- Sicherheitslücken bitte privat melden: [SECURITY.md](SECURITY.md)
-- Änderungen: [CHANGELOG.md](CHANGELOG.md)
+- Contributions: [CONTRIBUTING.md](CONTRIBUTING.md) · Issues are welcome in German or English
+- Please report security vulnerabilities privately: [SECURITY.md](SECURITY.md)
+- Changes: [CHANGELOG.md](CHANGELOG.md)
 
-## Lizenz
+## License
 
 [AGPL-3.0](LICENSE) © 2026 Jan Schultheiss

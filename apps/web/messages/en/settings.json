@@ -39,6 +39,7 @@
     "rows": "Rows",
     "empty": "No sync data available.",
     "ok": "ok",
+    "deferred": "paused",
     "error": "error",
     "errorHint": "Error details as a tooltip on the status badge.",
     "resyncTrigger": "Resync now",

@@ -1,7 +1,7 @@
 # @tripatlas/web
 
-Next.js-Frontend von Tripatlas. Setup, Entwicklung und Deployment sind im
-[Root-README](../../README.md) beschrieben; Dev-Start:
+Next.js frontend for Tripatlas. Setup, development, and deployment are described
+in the [root README](../../README.md); dev start:
 
 ```bash
 pnpm --filter @tripatlas/web dev   # http://localhost:3000

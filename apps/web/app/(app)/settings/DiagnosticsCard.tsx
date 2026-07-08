@@ -110,7 +110,7 @@ export async function DiagnosticsCard() {
                           : t("diagnostics.neverSuccessful")}
                       </span>
                     </div>
-                    {e.lastStatus !== "ok" && e.lastError && (
+                    {e.lastStatus === "error" && e.lastError && (
                       <p className="mt-1 flex items-start gap-1.5 rounded-lg bg-red-50 px-2 py-1.5 text-xs text-red-700 dark:bg-red-950 dark:text-red-300">
                         <AlertTriangle aria-hidden size={14} className="mt-0.5 shrink-0" />
                         <span className="break-words">{e.lastError}</span>
