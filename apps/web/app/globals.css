@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Dark-Mode über die .dark-Klasse steuern (statt reiner Media-Query),
+   damit der Theme-Switcher die Klasse auf <html> setzen kann. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-brand:
+    "Avenir Next", Avenir, "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-brand-mono:
+    "SFMono-Regular", "IBM Plex Mono", "Roboto Mono", "Cascadia Mono", Menlo,
+    monospace;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* iOS zoomt beim Fokus auf Felder < 16px hinein und bleibt gezoomt.
+   Auf schmalen Viewports Formularfelder daher auf mindestens 16px heben —
+   Desktop bleibt unberührt. */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: max(1rem, 100%);
+  }
+}
+
+/* Zentrale Card-Optik — nur bereitgestellt (bestehende Seiten bleiben unverändert). */
+@utility card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-white);
+}
+
+.dark .card {
+  border-color: var(--color-neutral-800);
+  background-color: var(--color-neutral-900);
+}

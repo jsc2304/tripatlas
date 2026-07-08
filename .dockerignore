@@ -1,0 +1,18 @@
+**/node_modules
+**/.next
+**/dist
+**/coverage
+**/*.tsbuildinfo
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+.DS_Store
+.claude
+docs
+# dev/ is kept (minus its own node_modules/dist above): pnpm-workspace.yaml
+# lists dev/* as a workspace member, and pnpm needs dev/fixtures/package.json
+# present to resolve the lockfile even though no image installs it.
+**/README.md
+README.md

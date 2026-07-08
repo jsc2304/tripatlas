@@ -1,0 +1,49 @@
+{
+  "title": "Insights",
+  "subtitleWithData": "Basiert auf {count, plural, one {# Fahrt} other {# Fahrten}} seit {date}.",
+  "subtitleNoData": "Muster und Zusammenhänge aus deinen Fahrten.",
+  "notEnoughTitle": "Noch nicht genug Daten",
+  "notEnoughHint": "Tripatlas sammelt weiter — sobald mehr Fahrten vorliegen, erscheint hier eine Auswertung.",
+  "notEnoughBannerHint": "Insights zeigt Auswertungen ab {min} auswertbaren Fahrten. Aktuell liegen {count} vor — Tripatlas sammelt weiter.",
+  "driveCountLabel": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+  "vehicleSwitcherLabel": "Fahrzeug wählen",
+  "cards": {
+    "temp": {
+      "title": "Verbrauch vs. Außentemperatur",
+      "ariaLabel": "Streudiagramm Verbrauch über Außentemperatur mit Mittelwertlinie je 5-°C-Bereich",
+      "subtitleDefault": "Kälte kostet Reichweite — bei niedrigen Temperaturen steigt der Verbrauch typischerweise.",
+      "subtitleWithDelta": "Bei ~{cold} °C verbrauchst du im Schnitt +{pct} % gegenüber ~{mild} °C."
+    },
+    "speed": {
+      "title": "Verbrauch vs. Durchschnittstempo",
+      "subtitle": "Effektives Tempo (Strecke ÷ Fahrtdauer). Hohes Tempo treibt den Verbrauch.",
+      "ariaLabel": "Streudiagramm Verbrauch über Durchschnittstempo mit Mittelwertlinie je 10-km/h-Bereich"
+    },
+    "month": {
+      "title": "Monatsverlauf",
+      "subtitle": "Gefahrene Kilometer und Ø-Verbrauch je Monat."
+    },
+    "weekday": {
+      "title": "Wochentagsmuster",
+      "subtitle": "Gefahrene Kilometer je Wochentag."
+    },
+    "shortTrip": {
+      "title": "Kurzstrecken-Anteil",
+      "subtitle": "Fahrten unter 5 km und ihr Verbrauch gegenüber dem Gesamtschnitt."
+    }
+  },
+  "charts": {
+    "scatterLegend": "Ø je {step}-{unit}-Bereich",
+    "monthChartAriaLabel": "Monatsverlauf: gefahrene Kilometer und Durchschnittsverbrauch",
+    "monthChartConsumptionLegend": "Ø Wh/km",
+    "weekdayChartAriaLabel": "Wochentagsmuster: gefahrene Kilometer je Wochentag",
+    "weekdayChartLegend": "km je Wochentag",
+    "shortTripAriaLabel": "Kurzstrecken-Anteil: {pct} Prozent der Fahrten unter 5 km",
+    "shortTripOf": "von",
+    "shortTripTail": "Fahrten sind Kurzstrecke (< 5 km).",
+    "avgShortTrip": "Ø Kurzstrecke:",
+    "avgOverall": "Ø gesamt:",
+    "surplusPrefix": "Kurzstrecken verbrauchen im Schnitt",
+    "surplusSuffix": "— kalter Antriebsstrang ist ein Verbrauchstreiber."
+  }
+}

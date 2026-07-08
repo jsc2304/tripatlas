@@ -1,0 +1,18 @@
+{
+  "prevMonth": "Previous month",
+  "nextMonth": "Next month",
+  "today": "Today",
+  "monthSelectLabel": "Select month",
+  "vehicleSelectLabel": "Select vehicle",
+  "chargeIcon": "Charging session",
+  "driveCountLabel": "{count, plural, one {# drive} other {# drives}}",
+  "weekday": {
+    "mon": "Mo",
+    "tue": "Tu",
+    "wed": "We",
+    "thu": "Th",
+    "fri": "Fr",
+    "sat": "Sa",
+    "sun": "Su"
+  }
+}

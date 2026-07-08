@@ -1,0 +1,24 @@
+{
+  "classification": {
+    "unclassified": "Unklassifiziert",
+    "private": "Privat",
+    "business": "Geschäftlich",
+    "commute": "Arbeitsweg"
+  },
+  "actions": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "back": "Zurück",
+    "close": "Schließen",
+    "apply": "Anwenden",
+    "create": "Anlegen",
+    "search": "Suchen"
+  },
+  "state": {
+    "loading": "Lädt …",
+    "error": "Etwas ist schiefgelaufen",
+    "none": "—"
+  }
+}

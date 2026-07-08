@@ -1,0 +1,1 @@
+ALTER TABLE "vehicle_status" ADD COLUMN "rated_range_km" double precision;

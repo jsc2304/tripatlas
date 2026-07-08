@@ -1,0 +1,1 @@
+ALTER TABLE "vehicles" ADD COLUMN "efficiency_override_kwh_per_km" double precision;

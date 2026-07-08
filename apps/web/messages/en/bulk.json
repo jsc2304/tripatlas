@@ -1,0 +1,17 @@
+{
+  "select": "Select",
+  "selectAll": "All",
+  "selectNone": "None",
+  "done": "Done",
+  "updated": "{count, plural, one {# drive updated.} other {# drives updated.}}",
+  "selectedCount": "{count, plural, one {# drive} other {# drives}}",
+  "applyClassificationLabel": "Apply classification",
+  "addTag": "Add tag",
+  "noTags": "No tags",
+  "addTagPlaceholder": "Add tag…",
+  "more": "More",
+  "customer": "Customer",
+  "project": "Project",
+  "apply": "Apply",
+  "applyError": "Could not apply change."
+}

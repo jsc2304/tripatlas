@@ -1,0 +1,49 @@
+{
+  "title": "Insights",
+  "subtitleWithData": "Based on {count, plural, one {# drive} other {# drives}} since {date}.",
+  "subtitleNoData": "Patterns and correlations from your drives.",
+  "notEnoughTitle": "Not enough data yet",
+  "notEnoughHint": "Tripatlas keeps collecting — once more drives are recorded, an analysis will appear here.",
+  "notEnoughBannerHint": "Insights shows analyses from {min} usable drives onward. Currently {count} available — Tripatlas keeps collecting.",
+  "driveCountLabel": "{count, plural, one {# drive} other {# drives}}",
+  "vehicleSwitcherLabel": "Select vehicle",
+  "cards": {
+    "temp": {
+      "title": "Consumption vs. outside temperature",
+      "ariaLabel": "Scatter plot of consumption over outside temperature with mean line per 5 °C range",
+      "subtitleDefault": "Cold cuts range — consumption typically rises at low temperatures.",
+      "subtitleWithDelta": "At ~{cold} °C you consume on average +{pct}% compared to ~{mild} °C."
+    },
+    "speed": {
+      "title": "Consumption vs. average speed",
+      "subtitle": "Effective speed (distance ÷ drive duration). High speed drives up consumption.",
+      "ariaLabel": "Scatter plot of consumption over average speed with mean line per 10 km/h range"
+    },
+    "month": {
+      "title": "Monthly trend",
+      "subtitle": "Distance driven and average consumption per month."
+    },
+    "weekday": {
+      "title": "Weekday pattern",
+      "subtitle": "Distance driven per weekday."
+    },
+    "shortTrip": {
+      "title": "Short-trip share",
+      "subtitle": "Drives under 5 km and their consumption compared to the overall average."
+    }
+  },
+  "charts": {
+    "scatterLegend": "Avg per {step}-{unit} range",
+    "monthChartAriaLabel": "Monthly trend: distance driven and average consumption",
+    "monthChartConsumptionLegend": "Avg Wh/km",
+    "weekdayChartAriaLabel": "Weekday pattern: distance driven per weekday",
+    "weekdayChartLegend": "km per weekday",
+    "shortTripAriaLabel": "Short-trip share: {pct} percent of drives under 5 km",
+    "shortTripOf": "of",
+    "shortTripTail": "drives are short trips (< 5 km).",
+    "avgShortTrip": "Avg short trip:",
+    "avgOverall": "Avg overall:",
+    "surplusPrefix": "Short trips consume on average",
+    "surplusSuffix": "— a cold drivetrain is a consumption driver."
+  }
+}

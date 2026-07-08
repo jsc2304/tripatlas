@@ -1,0 +1,166 @@
+{
+  "errors": {
+    "notAuthenticated": "Nicht angemeldet",
+    "invalidDate": "Ungültiges Datum",
+    "invalidFormat": "Ungültiges Format (erwartet: csv oder pdf)",
+    "invalidFormatWithGpx": "Ungültiges Format (erwartet: csv, pdf oder gpx)",
+    "invalidDriveId": "Ungültige Fahrt-ID",
+    "invalidJourneyId": "Ungültige Reise-ID",
+    "invalidMonth": "Ungültiger Monat (erwartet: YYYY-MM)",
+    "invalidClassification": "Ungültige Klassifizierung",
+    "driveNotFound": "Fahrt nicht gefunden",
+    "journeyNotFound": "Reise nicht gefunden",
+    "noTrackDataDrive": "Keine Trackdaten für diese Fahrt vorhanden",
+    "noTrackDataJourney": "Keine Trackdaten für diese Reise vorhanden",
+    "noVehicle": "Kein Fahrzeug vorhanden"
+  },
+  "journeyTypes": {
+    "vacation": "Urlaub",
+    "business_trip": "Geschäftsreise",
+    "roadtrip": "Roadtrip",
+    "other": "Sonstiges"
+  },
+  "csv": {
+    "driveHeaders": {
+      "date": "Datum",
+      "startTime": "Startzeit",
+      "endTime": "Endzeit",
+      "startPlace": "Startort",
+      "endPlace": "Zielort",
+      "odometerStart": "Km-Stand Start",
+      "odometerEnd": "Km-Stand Ende",
+      "distanceKm": "Distanz (km)",
+      "duration": "Dauer",
+      "classification": "Klassifizierung",
+      "purpose": "Zweck",
+      "customer": "Kunde",
+      "project": "Projekt",
+      "notes": "Notizen"
+    },
+    "chargeHeaders": {
+      "date": "Datum",
+      "start": "Start",
+      "end": "Ende",
+      "place": "Ort",
+      "duration": "Dauer",
+      "chargedKwh": "Geladen (kWh)",
+      "startSoc": "Start-SoC (%)",
+      "endSoc": "End-SoC (%)",
+      "maxPowerKw": "Max. Leistung (kW)",
+      "type": "Typ",
+      "cost": "Kosten"
+    },
+    "day": {
+      "sumTitle": "Summe",
+      "driveCount": "Anzahl Fahrten",
+      "distanceKm": "Distanz (km)",
+      "duration": "Dauer",
+      "consumedEnergyKwh": "Verbrauchte Energie (kWh)",
+      "note": "Hinweis",
+      "incompleteNote": "Einzelne Fahrten hatten unvollständige Daten; Summen ggf. unvollständig.",
+      "estimatedMarker": "~",
+      "estimatedValue": "geschätzter Wert"
+    },
+    "month": {
+      "sumByClassification": "Summe je Klassifizierung",
+      "classification": "Klassifizierung",
+      "driveCount": "Anzahl Fahrten",
+      "distanceKm": "Distanz (km)",
+      "total": "Gesamt",
+      "note": "Hinweis",
+      "incompleteNote": "Einzelne Fahrten hatten unvollständige Distanzdaten; Summen ggf. unvollständig."
+    },
+    "journey": {
+      "journey": "Reise",
+      "period": "Zeitraum",
+      "type": "Typ",
+      "drivesSection": "Fahrten",
+      "chargeStopsSection": "Ladestopps",
+      "kpisTitle": "Kennzahlen",
+      "totalKm": "Gesamtkilometer",
+      "driveTime": "Fahrzeit",
+      "chargeTime": "Ladezeit",
+      "chargeStopCount": "Ladestopps",
+      "avgConsumption": "Ø-Verbrauch (Wh/km)",
+      "consumedEnergyKwh": "Verbrauchte Energie (kWh)",
+      "chargedEnergyKwh": "Geladene Energie (kWh)",
+      "ascentM": "Höhenmeter bergauf (m)",
+      "descentM": "Höhenmeter bergab (m)",
+      "cost": "Kosten",
+      "costPer100Km": "Kosten pro 100 km",
+      "note": "Hinweis",
+      "incompleteCostNote": "Einzelne Ladevorgänge hatten keine Kostenangabe; Summe ggf. unvollständig.",
+      "costIncomplete": "(unvollständig)",
+      "estimatedMarker": "~",
+      "estimatedValue": "geschätzter Wert"
+    }
+  },
+  "pdf": {
+    "driveHeaders": {
+      "date": "Datum",
+      "start": "Start",
+      "end": "Ende",
+      "startPlace": "Startort",
+      "endPlace": "Zielort",
+      "distanceKm": "Km",
+      "duration": "Dauer",
+      "classification": "Klass.",
+      "purpose": "Zweck",
+      "customer": "Kunde",
+      "project": "Projekt",
+      "notes": "Notizen"
+    },
+    "chargeHeaders": {
+      "date": "Datum",
+      "start": "Start",
+      "end": "Ende",
+      "place": "Ort",
+      "duration": "Dauer",
+      "energy": "Geladen",
+      "soc": "SoC",
+      "power": "Leistung",
+      "type": "Typ",
+      "cost": "Kosten"
+    },
+    "footer": "Erstellt am {date} · Tripatlas",
+    "footerEstimatedSuffix": "~ = geschätzter Wert",
+    "drive": {
+      "title": "Tripatlas — Fahrt {date}",
+      "kpisTitle": "Kennzahlen",
+      "distance": "Distanz",
+      "duration": "Dauer",
+      "odometerRange": "Km-Stand Start / Ende"
+    },
+    "day": {
+      "title": "Tripatlas — Tagesreport {date}",
+      "sumTitle": "Summe",
+      "driveCount": "Anzahl Fahrten",
+      "distance": "Distanz",
+      "duration": "Dauer",
+      "consumedEnergy": "Verbrauchte Energie"
+    },
+    "month": {
+      "title": "Tripatlas — Fahrtenbuch {month}",
+      "sumByClassification": "Summe je Klassifizierung",
+      "driveCountKm": "{count, plural, one {# Fahrt} other {# Fahrten}} · {km} km",
+      "total": "Gesamt"
+    },
+    "journey": {
+      "title": "Tripatlas — Reise {name}",
+      "kpisTitle": "Kennzahlen",
+      "totalKm": "Gesamtkilometer",
+      "driveTime": "Fahrzeit",
+      "chargeTime": "Ladezeit",
+      "chargeStops": "Ladestopps",
+      "avgConsumption": "Ø-Verbrauch",
+      "consumedEnergy": "Verbrauchte Energie",
+      "chargedEnergy": "Geladene Energie",
+      "elevation": "Höhenmeter bergauf / bergab",
+      "costLabel": "Kosten",
+      "costLabelWithPer100Km": "Kosten ({value} / 100 km)",
+      "costIncomplete": "(unvollst.)",
+      "drivesSection": "Fahrten",
+      "chargeStopsSection": "Ladestopps"
+    }
+  }
+}

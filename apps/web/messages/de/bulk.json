@@ -1,0 +1,17 @@
+{
+  "select": "Auswählen",
+  "selectAll": "Alle",
+  "selectNone": "Keine",
+  "done": "Fertig",
+  "updated": "{count, plural, one {# Fahrt aktualisiert.} other {# Fahrten aktualisiert.}}",
+  "selectedCount": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+  "applyClassificationLabel": "Klassifizierung anwenden",
+  "addTag": "Tag hinzufügen",
+  "noTags": "Keine Tags",
+  "addTagPlaceholder": "Tag hinzufügen…",
+  "more": "Mehr",
+  "customer": "Kunde",
+  "project": "Projekt",
+  "apply": "Übernehmen",
+  "applyError": "Änderung konnte nicht angewendet werden."
+}

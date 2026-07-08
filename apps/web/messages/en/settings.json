@@ -1,0 +1,128 @@
+{
+  "title": "More",
+  "subtitle": "Settings and system status.",
+  "rulesLink": {
+    "title": "Auto-classification rules",
+    "subtitle": "Classify drives automatically using rules"
+  },
+  "vehicles": {
+    "title": "Vehicles",
+    "empty": "No vehicles synced yet.",
+    "model": "Model",
+    "vin": "VIN",
+    "efficiencyTeslamate": "Efficiency (TeslaMate)",
+    "efficiencyNotLearned": "not learned yet"
+  },
+  "efficiencyOverride": {
+    "label": "Efficiency fallback",
+    "placeholder": "e.g. 149",
+    "unit": "Wh/km",
+    "saving": "Saving…",
+    "hintLearned": "TeslaMate has already learned the efficiency — the learned value takes precedence, the fallback is inactive.",
+    "hintNotLearned": "Used for the consumption estimate until TeslaMate has learned the efficiency from your first charging sessions. Leave empty to remove. Existing drives are automatically recalculated (≤60 s)."
+  },
+  "software": {
+    "title": "Software",
+    "empty": "No updates recorded yet.",
+    "unknownVersion": "Unknown version",
+    "current": "Current",
+    "since": "since {date}",
+    "range": "{start} – {end}",
+    "installDuration": "Installation {duration}"
+  },
+  "sync": {
+    "title": "Sync",
+    "entity": "Entity",
+    "run": "Run",
+    "status": "Status",
+    "watermark": "Watermark",
+    "rows": "Rows",
+    "empty": "No sync data available.",
+    "ok": "ok",
+    "error": "error",
+    "errorHint": "Error details as a tooltip on the status badge.",
+    "resyncTrigger": "Resync now",
+    "resyncing": "Resetting…",
+    "resyncConfirmLabel": "Yes, reset",
+    "resyncConfirmMessage": "All sync watermarks will be reset and fully resynced on the worker's next tick. Continue?",
+    "resyncSuccess": "Watermarks reset — the worker will fetch everything again on its next tick (≤60 s).",
+    "resyncError": "Error while resetting."
+  },
+  "display": {
+    "title": "Display",
+    "timezone": "Time zone",
+    "dateFormat": "Date format",
+    "units": "Units",
+    "note": "The time zone is set via the APP_TIMEZONE environment variable. Date/unit format is fixed to de-DE / km in the MVP."
+  },
+  "security": {
+    "title": "Security"
+  },
+  "passwordChange": {
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "newPasswordRepeat": "Repeat new password",
+    "submit": "Change password",
+    "submitting": "Saving…",
+    "success": "Password changed. Other signed-in sessions were logged out."
+  },
+  "links": {
+    "tags": "Manage tags",
+    "journeys": "Journeys",
+    "calendar": "Calendar",
+    "reports": "Reports",
+    "insights": "Insights"
+  },
+  "logout": "Log out",
+  "loggingOut": "Logging out…",
+  "diagnostics": {
+    "title": "Diagnostics",
+    "db": "Tripatlas database",
+    "dbReachable": "reachable",
+    "dbUnreachableFallback": "not reachable",
+    "workerSync": "Worker / sync",
+    "empty": "No sync data available.",
+    "lastSuccess": "last success {time}",
+    "neverSuccessful": "never successful",
+    "badges": {
+      "fresh": "current",
+      "aging": "aging",
+      "stale": "stale",
+      "never": "never ran"
+    },
+    "entities": {
+      "drives": "Drives",
+      "charges": "Charging sessions",
+      "parks": "Parking sessions",
+      "vehicles": "Vehicles"
+    },
+    "teslamateTest": {
+      "title": "TeslaMate direct test",
+      "description": "Read-only test against TESLAMATE_DATABASE_URL from the web container (only counts drives, writes nothing).",
+      "envNotSet": "TESLAMATE_DATABASE_URL is not set in the web container — this test is for diagnostics only and not needed in normal operation, since only the worker reads the TeslaMate database.",
+      "trigger": "Test connection",
+      "testing": "Testing…",
+      "unknownError": "Unknown error while testing.",
+      "envNotSetMessage": "TESLAMATE_DATABASE_URL is not set in the web container. That's fine in normal operation — only the worker needs it.",
+      "successMessage": "Connection successful — {count} drives found in the TeslaMate database.",
+      "unknownConnectionError": "Unknown error connecting."
+    },
+    "hints": {
+      "dbUnreachable": "The Tripatlas database is not reachable. Is the db container running? Is DATABASE_URL correctly set in the web container?",
+      "neverSynced": "Never synced yet. Is the worker container running? Is TESLAMATE_DATABASE_URL set in the worker?",
+      "someNeverSynced": "At least one area has never synced successfully. Check the worker logs: docker compose logs worker.",
+      "stale": "The last successful sync was a while ago. Is the worker container still running? Check the docker logs: docker compose logs worker.",
+      "runFailed": "At least one sync run failed — see the error message below the relevant row."
+    }
+  },
+  "errors": {
+    "notAuthenticated": "Not signed in.",
+    "currentPasswordRequired": "Current password is required.",
+    "newPasswordMinLength": "New password must be at least 8 characters.",
+    "passwordsMismatch": "The new passwords don't match.",
+    "invalidInput": "Invalid input.",
+    "userNotFound": "User not found.",
+    "currentPasswordWrong": "Current password is wrong.",
+    "invalidEfficiencyValue": "Invalid value (80–400 Wh/km)."
+  }
+}

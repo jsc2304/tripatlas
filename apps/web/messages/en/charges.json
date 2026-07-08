@@ -1,0 +1,104 @@
+{
+  "page": {
+    "title": "Charging Overview",
+    "subtitle": "Charging sessions by month.",
+    "stats": {
+      "sessions": "Charging sessions",
+      "energyAdded": "Energy charged",
+      "totalCost": "Total cost",
+      "costsPartial": "(as recorded)",
+      "acDc": "AC / DC"
+    },
+    "empty": {
+      "title": "No charging sessions this month.",
+      "hint": "Choose a different month or wait for the next sync."
+    },
+    "session": {
+      "energy": "Energy",
+      "soc": "SoC",
+      "maxPower": "Max. power",
+      "duration": "Duration",
+      "cost": "Cost"
+    }
+  },
+  "filters": {
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "selectMonth": "Choose month"
+  },
+  "detail": {
+    "toDayView": "Go to day view ({date})",
+    "chargerType": {
+      "ac": "Alternating current (AC)",
+      "dc": "Direct current (DC, fast charging)"
+    },
+    "location": {
+      "title": "Location",
+      "createPlace": "Create a place from these coordinates"
+    },
+    "metrics": {
+      "title": "Metrics",
+      "energyAdded": "Energy charged",
+      "energyUsed": "Energy used",
+      "soc": "SoC",
+      "maxPower": "Max. power",
+      "avgPower": "Avg. power",
+      "type": "Type",
+      "duration": "Duration",
+      "address": "Address",
+      "outsideTempAvg": "Avg. outside temperature"
+    },
+    "curve": {
+      "title": "Charging curve",
+      "pointCount": "{count, plural, one {# data point} other {# data points}}",
+      "noData": "No curve data available.",
+      "modePowerOverSoc": "Power over SoC",
+      "modeOverTime": "over time",
+      "ariaSoc": "Charging curve: power over state of charge",
+      "ariaTime": "Charging curve: power over time",
+      "avgAbbrev": "Avg {value}",
+      "maxAbbrev": "Max {value}",
+      "tooltipSoc": "{percent}% · {power}",
+      "tooltipTime": "{minutes} min · {power}"
+    },
+    "postProcessing": {
+      "title": "Post-processing"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "history": "History"
+  },
+  "annotationForm": {
+    "cost": "Cost",
+    "costPlaceholder": "0.00",
+    "autoCost": "automatic ({price} · {place})",
+    "autoCostDefaultPlace": "place",
+    "manualCost": "manual",
+    "costHint": "Leave empty to calculate automatically if a place price is set.",
+    "currency": "Currency",
+    "currencyOther": "Other…",
+    "currencyCode": "Currency code (3 letters)",
+    "notes": "Notes",
+    "saving": "Saving…",
+    "saved": "Saved"
+  },
+  "tagManager": {
+    "none": "No tags assigned yet.",
+    "removeTag": "Remove tag {name}",
+    "addPlaceholder": "Add tag…",
+    "addLabel": "Add tag",
+    "createNew": "Create “{name}”",
+    "addError": "Failed to add.",
+    "removeError": "Failed to remove."
+  },
+  "errors": {
+    "notLoggedIn": "Not signed in.",
+    "invalidAmount": "Invalid amount.",
+    "invalidInput": "Invalid input.",
+    "currencyFormat": "Currency must be a 3-letter code.",
+    "currencyRequired": "Please provide a currency if a cost is recorded.",
+    "sessionNotFound": "Charging session not found.",
+    "tagCreateFailed": "Failed to create tag."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Tags",
+  "description": "Tags freely label drives and charging sessions — e.g. for customers, projects, or trips.",
+  "empty": "No tags yet.",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "e.g. Italy vacation 2026",
+    "category": "Category",
+    "categoryPlaceholder": "optional",
+    "color": "Color",
+    "submit": "Create tag",
+    "submitting": "Creating…"
+  },
+  "row": {
+    "categoryPlaceholder": "Category",
+    "colorAriaLabel": "Color {color}",
+    "usage": "{driveCount, plural, one {# drive} other {# drives}} · {chargeCount, plural, one {# charging session} other {# charging sessions}}"
+  },
+  "deleteConfirm": {
+    "simple": "Really delete tag \"{name}\"?",
+    "withUsage": "Really delete tag \"{name}\"? It is assigned {count} times — the assignments will also be removed."
+  },
+  "errors": {
+    "notAuthenticated": "Not signed in.",
+    "nameRequired": "Name must not be empty.",
+    "invalidName": "Invalid name.",
+    "invalidColor": "Invalid color.",
+    "nameTaken": "A tag with this name already exists.",
+    "renameFailed": "Failed to rename.",
+    "saveFailed": "Failed to save.",
+    "deleteFailed": "Failed to delete."
+  }
+}

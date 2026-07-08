@@ -1,0 +1,104 @@
+{
+  "page": {
+    "title": "Ladeübersicht",
+    "subtitle": "Ladevorgänge nach Monat.",
+    "stats": {
+      "sessions": "Ladevorgänge",
+      "energyAdded": "Energie geladen",
+      "totalCost": "Kosten gesamt",
+      "costsPartial": "(soweit erfasst)",
+      "acDc": "AC / DC"
+    },
+    "empty": {
+      "title": "Keine Ladevorgänge in diesem Monat.",
+      "hint": "Wähle einen anderen Monat oder warte auf die nächste Synchronisierung."
+    },
+    "session": {
+      "energy": "Energie",
+      "soc": "SoC",
+      "maxPower": "Max. Leistung",
+      "duration": "Dauer",
+      "cost": "Kosten"
+    }
+  },
+  "filters": {
+    "prevMonth": "Vorheriger Monat",
+    "nextMonth": "Nächster Monat",
+    "selectMonth": "Monat wählen"
+  },
+  "detail": {
+    "toDayView": "Zur Tagesansicht ({date})",
+    "chargerType": {
+      "ac": "Wechselstrom (AC)",
+      "dc": "Gleichstrom (DC, Schnellladen)"
+    },
+    "location": {
+      "title": "Standort",
+      "createPlace": "Ort aus diesen Koordinaten anlegen"
+    },
+    "metrics": {
+      "title": "Kennzahlen",
+      "energyAdded": "Energie geladen",
+      "energyUsed": "Energie verbraucht",
+      "soc": "SoC",
+      "maxPower": "Max. Leistung",
+      "avgPower": "Ø-Leistung",
+      "type": "Typ",
+      "duration": "Dauer",
+      "address": "Adresse",
+      "outsideTempAvg": "Außentemperatur Ø"
+    },
+    "curve": {
+      "title": "Ladekurve",
+      "pointCount": "{count, plural, one {# Messpunkt} other {# Messpunkte}}",
+      "noData": "Keine Kurvendaten vorhanden.",
+      "modePowerOverSoc": "Leistung über SoC",
+      "modeOverTime": "über Zeit",
+      "ariaSoc": "Ladekurve: Leistung über Ladestand",
+      "ariaTime": "Ladekurve: Leistung über Zeit",
+      "avgAbbrev": "Ø {value}",
+      "maxAbbrev": "Max {value}",
+      "tooltipSoc": "{percent} % · {power}",
+      "tooltipTime": "{minutes} min · {power}"
+    },
+    "postProcessing": {
+      "title": "Nachbearbeitung"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "history": "Verlauf"
+  },
+  "annotationForm": {
+    "cost": "Kosten",
+    "costPlaceholder": "0,00",
+    "autoCost": "automatisch ({price} · {place})",
+    "autoCostDefaultPlace": "Ort",
+    "manualCost": "manuell",
+    "costHint": "Leer lassen = automatisch berechnen, falls Ortspreis gesetzt.",
+    "currency": "Währung",
+    "currencyOther": "Andere…",
+    "currencyCode": "Währungscode (3 Buchstaben)",
+    "notes": "Notizen",
+    "saving": "Speichert…",
+    "saved": "Gespeichert"
+  },
+  "tagManager": {
+    "none": "Noch keine Tags zugewiesen.",
+    "removeTag": "Tag {name} entfernen",
+    "addPlaceholder": "Tag hinzufügen…",
+    "addLabel": "Tag hinzufügen",
+    "createNew": "„{name}“ neu anlegen",
+    "addError": "Fehler beim Hinzufügen.",
+    "removeError": "Fehler beim Entfernen."
+  },
+  "errors": {
+    "notLoggedIn": "Nicht angemeldet.",
+    "invalidAmount": "Ungültiger Betrag.",
+    "invalidInput": "Ungültige Eingabe.",
+    "currencyFormat": "Währung muss aus 3 Buchstaben bestehen.",
+    "currencyRequired": "Bitte eine Währung angeben, wenn Kosten erfasst werden.",
+    "sessionNotFound": "Ladevorgang nicht gefunden.",
+    "tagCreateFailed": "Tag konnte nicht angelegt werden."
+  }
+}

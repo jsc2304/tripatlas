@@ -1,0 +1,19 @@
+{
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System",
+    "groupLabel": "Design",
+    "switchAriaLabel": "Design: {current}. Weiter zu {next}.",
+    "currentTitle": "Design: {current}"
+  },
+  "language": {
+    "groupLabel": "Sprache",
+    "switchAriaLabel": "Sprache: {current}. Zu {next} wechseln.",
+    "currentTitle": "Sprache: {current}"
+  },
+  "comingSoon": "Kommt in einem späteren Milestone.",
+  "meta": {
+    "description": "Self-hosted Fahrtenarchiv für Tesla"
+  }
+}

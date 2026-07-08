@@ -1,0 +1,81 @@
+{
+  "title": "Regeln",
+  "subtitle": "Regeln klassifizieren neue Fahrten automatisch — z. B. „Zuhause → Büro, Mo–Fr“ als Arbeitsweg.",
+  "newRule": "Neue Regel",
+  "newTitle": "Neue Regel",
+  "editTitle": "Regel bearbeiten",
+  "manualUntouchedNotice": "Regeln fassen nur unklassifizierte Fahrten an — deine manuellen Änderungen bleiben unangetastet.",
+  "empty": {
+    "title": "Noch keine Regeln angelegt.",
+    "hint": "Beispiel: Start = Zuhause und Ziel = Büro an Mo–Fr → als Arbeitsweg klassifizieren. Neue Fahrten werden dann automatisch einsortiert."
+  },
+  "applyButton": {
+    "label": "Jetzt auf alle unklassifizierten Fahrten anwenden",
+    "pending": "Wende an…",
+    "open": "{count, plural, one {# Fahrt offen} other {# Fahrten offen}}",
+    "applied": "{count, plural, one {# Fahrt klassifiziert.} other {# Fahrten klassifiziert.}}",
+    "none": "Keine passende Fahrt gefunden — nichts geändert.",
+    "error": "Fehler beim Anwenden."
+  },
+  "weekday": {
+    "mon": "Mo",
+    "tue": "Di",
+    "wed": "Mi",
+    "thu": "Do",
+    "fri": "Fr",
+    "sat": "Sa",
+    "sun": "So"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "z. B. Arbeitsweg",
+    "conditionsLegend": "Bedingungen",
+    "conditionsHint": "Alle gesetzten Bedingungen müssen zutreffen. Mindestens eine ist nötig.",
+    "startPlace": "Start-Ort",
+    "endPlace": "Ziel-Ort",
+    "anyPlace": "— beliebig —",
+    "weekdaysLegend": "Wochentage",
+    "weekdaysHint": "Nichts ausgewählt = alle Tage.",
+    "actionsLegend": "Aktionen",
+    "actionsHint": "Was passiert bei einem Treffer? Mindestens eine Aktion ist nötig.",
+    "classification": "Klassifizierung",
+    "noChange": "— nicht ändern —",
+    "tag": "Tag",
+    "noTag": "— kein Tag —",
+    "purpose": "Zweck",
+    "optionalPlaceholder": "optional",
+    "customer": "Kunde",
+    "project": "Projekt",
+    "priority": "Priorität",
+    "priorityHint": "Kleinere Zahl gewinnt zuerst.",
+    "enabled": "Regel aktiv",
+    "saving": "Speichert…"
+  },
+  "row": {
+    "priorityLabel": "Prio",
+    "enableAria": "Regel aktivieren",
+    "disableAria": "Regel deaktivieren",
+    "editAria": "Regel bearbeiten",
+    "deleteConfirm": "Regel \"{name}\" wirklich löschen?",
+    "errorToggle": "Fehler beim Umschalten.",
+    "errorSavePriority": "Fehler beim Speichern.",
+    "errorDelete": "Fehler beim Löschen.",
+    "route": "{start} → {end}",
+    "startOnly": "Start: {start}",
+    "endOnly": "Ziel: {end}",
+    "placeFallback": "Ort #{id}",
+    "purposeBadge": "Zweck: {value}",
+    "customerBadge": "Kunde: {value}",
+    "projectBadge": "Projekt: {value}",
+    "noAction": "Keine Aktion"
+  },
+  "errors": {
+    "notAuthenticated": "Nicht angemeldet.",
+    "nameRequired": "Name darf nicht leer sein.",
+    "invalidInput": "Ungültige Eingabe.",
+    "conditionRequired": "Mindestens eine Bedingung (Start, Ziel oder Wochentage) muss gesetzt sein.",
+    "actionRequired": "Mindestens eine Aktion (Klassifizierung, Tag, Zweck, Kunde oder Projekt) muss gesetzt sein.",
+    "invalidRuleId": "Ungültige Regel-ID.",
+    "ruleNotFound": "Regel nicht gefunden."
+  }
+}

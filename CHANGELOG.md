@@ -1,0 +1,27 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2026-07-08
+
+### Added
+
+- Trip archive with day view.
+- Classification, tags, and audit log.
+- Places with geofences and map picker.
+- Calendar, search, and monthly reports with CSV/PDF export.
+- Journeys with CSV/PDF/GPX export.
+- Trip and charging analytics with maps, charging curves, and weather.
+- Insights.
+- Start dashboard.
+- Tessie import.
+- Automatic classification rules.
+- Bulk editing.
+- Automatic charging costs per place.
+- Route planner (experimental).
+- Dark mode.
+- Mobile optimization.
+- Internationalization in German and English.

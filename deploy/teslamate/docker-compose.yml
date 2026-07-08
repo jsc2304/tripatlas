@@ -1,0 +1,65 @@
+# TeslaMate-Stack für Tripatlas-Nutzer, die noch kein TeslaMate betreiben.
+# Minimal-Setup ohne Grafana (Tripatlas ist die Auswertungs-UI; Grafana kann
+# jederzeit ergänzt werden, siehe TeslaMate-Doku).
+#
+# Verwendung:
+#   mkdir ~/teslamate && cp docker-compose.yml ~/teslamate/
+#   cd ~/teslamate
+#   cat > .env <<'EOF'
+#   TM_DB_PASSWORD=<sicheres passwort>
+#   TM_ENCRYPTION_KEY=<sicherer zufallswert>
+#   EOF
+#   docker compose up -d
+#
+# Danach http://<host>:4000 öffnen und das Tesla-Konto anmelden.
+# Das Compose-Netz heißt "teslamate_default" — Tripatlas' Worker hängt sich
+# per docker-compose.override.yml dort ein (siehe Tripatlas-README).
+
+services:
+  teslamate:
+    image: teslamate/teslamate:latest
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      - ENCRYPTION_KEY=${TM_ENCRYPTION_KEY:?TM_ENCRYPTION_KEY fehlt in .env}
+      - DATABASE_USER=teslamate
+      - DATABASE_PASS=${TM_DB_PASSWORD:?TM_DB_PASSWORD fehlt in .env}
+      - DATABASE_NAME=teslamate
+      - DATABASE_HOST=database
+      - MQTT_HOST=mosquitto
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./import:/opt/app/import
+    cap_drop:
+      - ALL
+
+  database:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=teslamate
+      - POSTGRES_PASSWORD=${TM_DB_PASSWORD:?TM_DB_PASSWORD fehlt in .env}
+      - POSTGRES_DB=teslamate
+    volumes:
+      - teslamate-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teslamate"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+    command: mosquitto -c /mosquitto-no-auth.conf
+    volumes:
+      - mosquitto-conf:/mosquitto/config
+      - mosquitto-data:/mosquitto/data
+
+volumes:
+  teslamate-db:
+  mosquitto-conf:
+  mosquitto-data:

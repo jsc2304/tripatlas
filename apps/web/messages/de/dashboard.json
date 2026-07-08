@@ -1,0 +1,50 @@
+{
+  "onboarding": {
+    "title": "Tripatlas wartet auf den ersten Sync",
+    "description": "Sobald der Sync-Worker die erste Fahrt aus TeslaMate übernommen hat, erscheint hier deine Startseite.",
+    "step1": "Läuft der <code>worker</code>-Container?",
+    "step2": "Ist <code>TESLAMATE_DATABASE_URL</code> korrekt gesetzt (read-only-Rolle auf der TeslaMate-Datenbank)?",
+    "step3": "Der erste Sync dauert je nach Fahrhistorie einige Minuten — einfach kurz warten.",
+    "diagnoseCta": "Verbindungs-Diagnose öffnen",
+    "demoHint": "Kein Auto zur Hand? Mit <compose>docker-compose.demo.yml</compose> (siehe <docs>docs/demo.md</docs>) lässt sich Tripatlas in wenigen Minuten mit Beispieldaten ausprobieren — ganz ohne echtes Fahrzeug."
+  },
+  "vehicleStatusEmpty": "Noch kein Fahrzeugstatus",
+  "vehicleCard": {
+    "drivingNow": "Fährt gerade",
+    "chargingNow": "Lädt gerade",
+    "chargingNowWithEnergy": "Lädt gerade · {energy}",
+    "parked": "Parkt",
+    "parkedSince": "Parkt seit {time}",
+    "statusUnknown": "Status unbekannt",
+    "ratedRangeTitle": "Typreichweite laut Fahrzeug (rated range)",
+    "socUnknown": "Ladestand unbekannt",
+    "placeUnknown": "Standort unbekannt",
+    "odometerUnknown": "km unbekannt",
+    "lastUpdated": "zuletzt aktualisiert {time}",
+    "neverSynced": "noch nie synchronisiert"
+  },
+  "tpms": {
+    "title": "Reifendruck",
+    "fl": "VL",
+    "fr": "VR",
+    "rl": "HL",
+    "rr": "HR",
+    "checkWarning": "Reifendruck prüfen"
+  },
+  "stats": {
+    "today": "Heute",
+    "thisWeek": "Diese Woche",
+    "lastCharge": "Letzte Ladung",
+    "unclassified": "Unklassifiziert",
+    "driveCount": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+    "noData": "Keine Daten",
+    "classifyNow": "jetzt klassifizieren",
+    "allDone": "Alles erledigt",
+    "importedExtra": "zzgl. {count} historische (Import)"
+  },
+  "recentDrives": {
+    "title": "Letzte Fahrten",
+    "empty": "Noch keine Fahrten",
+    "dayViewCta": "Zur Tagesansicht"
+  }
+}

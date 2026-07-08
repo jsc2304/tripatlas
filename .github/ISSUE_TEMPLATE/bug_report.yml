@@ -1,0 +1,70 @@
+name: Bug report
+description: Report something that is broken or behaves unexpectedly.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please include enough detail for a maintainer to reproduce it.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Which Tripatlas release, tag, or commit are you running?
+      placeholder: "0.1.0 or commit SHA"
+    validations:
+      required: true
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment method
+      description: How are you running Tripatlas?
+      options:
+        - Docker Compose
+        - Manual
+        - Demo
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: teslamate_version
+    attributes:
+      label: TeslaMate version
+      description: Which TeslaMate version is connected to Tripatlas?
+      placeholder: "e.g. 1.33.0"
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: Describe the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest set of steps that triggers the problem.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste relevant web, worker, browser console, or Docker logs. Remove secrets before posting.
+      render: shell
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add screenshots, configuration notes, browser details, or anything else that may help.

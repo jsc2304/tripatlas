@@ -1,0 +1,166 @@
+{
+  "errors": {
+    "notAuthenticated": "Not signed in",
+    "invalidDate": "Invalid date",
+    "invalidFormat": "Invalid format (expected: csv or pdf)",
+    "invalidFormatWithGpx": "Invalid format (expected: csv, pdf, or gpx)",
+    "invalidDriveId": "Invalid drive ID",
+    "invalidJourneyId": "Invalid journey ID",
+    "invalidMonth": "Invalid month (expected: YYYY-MM)",
+    "invalidClassification": "Invalid classification",
+    "driveNotFound": "Drive not found",
+    "journeyNotFound": "Journey not found",
+    "noTrackDataDrive": "No track data available for this drive",
+    "noTrackDataJourney": "No track data available for this journey",
+    "noVehicle": "No vehicle available"
+  },
+  "journeyTypes": {
+    "vacation": "Vacation",
+    "business_trip": "Business trip",
+    "roadtrip": "Road trip",
+    "other": "Other"
+  },
+  "csv": {
+    "driveHeaders": {
+      "date": "Date",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "startPlace": "Start Place",
+      "endPlace": "End Place",
+      "odometerStart": "Odometer Start",
+      "odometerEnd": "Odometer End",
+      "distanceKm": "Distance (km)",
+      "duration": "Duration",
+      "classification": "Classification",
+      "purpose": "Purpose",
+      "customer": "Customer",
+      "project": "Project",
+      "notes": "Notes"
+    },
+    "chargeHeaders": {
+      "date": "Date",
+      "start": "Start",
+      "end": "End",
+      "place": "Place",
+      "duration": "Duration",
+      "chargedKwh": "Charged (kWh)",
+      "startSoc": "Start SoC (%)",
+      "endSoc": "End SoC (%)",
+      "maxPowerKw": "Max. Power (kW)",
+      "type": "Type",
+      "cost": "Cost"
+    },
+    "day": {
+      "sumTitle": "Total",
+      "driveCount": "Drive Count",
+      "distanceKm": "Distance (km)",
+      "duration": "Duration",
+      "consumedEnergyKwh": "Energy Consumed (kWh)",
+      "note": "Note",
+      "incompleteNote": "Some drives had incomplete data; totals may be incomplete.",
+      "estimatedMarker": "~",
+      "estimatedValue": "estimated value"
+    },
+    "month": {
+      "sumByClassification": "Total by Classification",
+      "classification": "Classification",
+      "driveCount": "Drive Count",
+      "distanceKm": "Distance (km)",
+      "total": "Total",
+      "note": "Note",
+      "incompleteNote": "Some drives had incomplete distance data; totals may be incomplete."
+    },
+    "journey": {
+      "journey": "Journey",
+      "period": "Period",
+      "type": "Type",
+      "drivesSection": "Drives",
+      "chargeStopsSection": "Charging Stops",
+      "kpisTitle": "Key Figures",
+      "totalKm": "Total Distance",
+      "driveTime": "Drive Time",
+      "chargeTime": "Charge Time",
+      "chargeStopCount": "Charging Stops",
+      "avgConsumption": "Avg. Consumption (Wh/km)",
+      "consumedEnergyKwh": "Energy Consumed (kWh)",
+      "chargedEnergyKwh": "Energy Charged (kWh)",
+      "ascentM": "Elevation Gain (m)",
+      "descentM": "Elevation Loss (m)",
+      "cost": "Cost",
+      "costPer100Km": "Cost per 100 km",
+      "note": "Note",
+      "incompleteCostNote": "Some charging sessions had no cost recorded; total may be incomplete.",
+      "costIncomplete": "(incomplete)",
+      "estimatedMarker": "~",
+      "estimatedValue": "estimated value"
+    }
+  },
+  "pdf": {
+    "driveHeaders": {
+      "date": "Date",
+      "start": "Start",
+      "end": "End",
+      "startPlace": "Start Place",
+      "endPlace": "End Place",
+      "distanceKm": "Km",
+      "duration": "Duration",
+      "classification": "Class.",
+      "purpose": "Purpose",
+      "customer": "Customer",
+      "project": "Project",
+      "notes": "Notes"
+    },
+    "chargeHeaders": {
+      "date": "Date",
+      "start": "Start",
+      "end": "End",
+      "place": "Place",
+      "duration": "Duration",
+      "energy": "Charged",
+      "soc": "SoC",
+      "power": "Power",
+      "type": "Type",
+      "cost": "Cost"
+    },
+    "footer": "Generated on {date} · Tripatlas",
+    "footerEstimatedSuffix": "~ = estimated value",
+    "drive": {
+      "title": "Tripatlas — Drive {date}",
+      "kpisTitle": "Key Figures",
+      "distance": "Distance",
+      "duration": "Duration",
+      "odometerRange": "Odometer Start / End"
+    },
+    "day": {
+      "title": "Tripatlas — Day Report {date}",
+      "sumTitle": "Total",
+      "driveCount": "Drive Count",
+      "distance": "Distance",
+      "duration": "Duration",
+      "consumedEnergy": "Energy Consumed"
+    },
+    "month": {
+      "title": "Tripatlas — Logbook {month}",
+      "sumByClassification": "Total by Classification",
+      "driveCountKm": "{count, plural, one {# drive} other {# drives}} · {km} km",
+      "total": "Total"
+    },
+    "journey": {
+      "title": "Tripatlas — Journey {name}",
+      "kpisTitle": "Key Figures",
+      "totalKm": "Total Distance",
+      "driveTime": "Drive Time",
+      "chargeTime": "Charge Time",
+      "chargeStops": "Charging Stops",
+      "avgConsumption": "Avg. Consumption",
+      "consumedEnergy": "Energy Consumed",
+      "chargedEnergy": "Energy Charged",
+      "elevation": "Elevation Gain / Loss",
+      "costLabel": "Cost",
+      "costLabelWithPer100Km": "Cost ({value} / 100 km)",
+      "costIncomplete": "(incomplete)",
+      "drivesSection": "Drives",
+      "chargeStopsSection": "Charging Stops"
+    }
+  }
+}

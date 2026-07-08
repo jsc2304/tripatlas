@@ -1,0 +1,17 @@
+{
+  "name": "tripatlas",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "dev": "echo \"Run pnpm --filter @tripatlas/web dev (or worker/db) — no root dev process\"",
+    "build": "corepack pnpm -r build",
+    "test": "corepack pnpm -r test",
+    "lint": "corepack pnpm --filter @tripatlas/core --filter @tripatlas/db build && corepack pnpm -r lint",
+    "db:generate": "corepack pnpm --filter @tripatlas/db generate",
+    "db:migrate": "corepack pnpm --filter @tripatlas/db migrate",
+    "dev:db": "docker compose -f docker-compose.dev.yml up -d",
+    "dev:db:down": "docker compose -f docker-compose.dev.yml down",
+    "db:seed:teslamate": "corepack pnpm --filter @tripatlas/fixtures seed"
+  }
+}

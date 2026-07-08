@@ -1,0 +1,37 @@
+services:
+  tripatlas-db:
+    image: postgres:17-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: tripatlas
+      POSTGRES_PASSWORD: tripatlas
+      POSTGRES_DB: tripatlas
+    volumes:
+      - tripatlas-dev-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tripatlas"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  teslamate-db:
+    image: postgres:17-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: teslamate
+      POSTGRES_PASSWORD: teslamate
+      POSTGRES_DB: teslamate
+    volumes:
+      - teslamate-dev-db:/var/lib/postgresql/data
+      - ./dev/fixtures/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teslamate"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tripatlas-dev-db:
+  teslamate-dev-db:

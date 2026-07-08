@@ -1,0 +1,22 @@
+{
+  "title": "Reports",
+  "subtitle": "Monthly report by classification.",
+  "exportCsv": "Export CSV",
+  "exportPdf": "Export PDF",
+  "total": "Total",
+  "driveCountLabel": "{count, plural, one {# drive} other {# drives}}",
+  "incompleteDataHint": "Some drives had incomplete distance data; totals may be incomplete.",
+  "table": {
+    "date": "Date",
+    "time": "Time",
+    "route": "Start → Destination",
+    "km": "Km",
+    "classification": "Classification",
+    "empty": "No drives for this period and classification."
+  },
+  "filters": {
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "selectMonth": "Select month"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "emptyTitle": "Keine Fahrten an diesem Tag.",
+  "emptyHint": "An diesem Tag wurden keine Fahrten, Park- oder Ladevorgänge aufgezeichnet.",
+  "driveCount": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+  "driveTime": "Fahrzeit",
+  "estimated": "geschätzt",
+  "estimatedLegend": "~ = geschätzt",
+  "estimatedValueTitle": "geschätzter Wert",
+  "vehicleSelectLabel": "Fahrzeug wählen",
+  "prevDay": "Vorheriger Tag",
+  "nextDay": "Nächster Tag",
+  "today": "Heute",
+  "dateSelectLabel": "Datum wählen",
+  "openCalendar": "Kalender öffnen",
+  "parkedAt": "Geparkt: {place}",
+  "chargedAt": "Geladen: {place}",
+  "chargedShort": "⚡ geladen",
+  "sinceTime": "seit {time}",
+  "driveInProgress": "Fahrt läuft…",
+  "classifyGroupLabel": "Klassifizierung",
+  "classifyShort": {
+    "unclassified": "Unklass.",
+    "private": "Privat",
+    "business": "Geschäftlich",
+    "commute": "Arbeitsweg"
+  }
+}

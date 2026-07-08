@@ -1,0 +1,33 @@
+{
+  "title": "Tags",
+  "description": "Tags markieren Fahrten und Ladevorgänge frei — z. B. für Kunden, Projekte oder Reisen.",
+  "empty": "Noch keine Tags angelegt.",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "z. B. Urlaub Italien 2026",
+    "category": "Kategorie",
+    "categoryPlaceholder": "optional",
+    "color": "Farbe",
+    "submit": "Tag anlegen",
+    "submitting": "Anlegen…"
+  },
+  "row": {
+    "categoryPlaceholder": "Kategorie",
+    "colorAriaLabel": "Farbe {color}",
+    "usage": "{driveCount, plural, one {# Fahrt} other {# Fahrten}} · {chargeCount, plural, one {# Ladevorgang} other {# Ladevorgänge}}"
+  },
+  "deleteConfirm": {
+    "simple": "Tag \"{name}\" wirklich löschen?",
+    "withUsage": "Tag \"{name}\" wirklich löschen? Es ist {count}x zugewiesen — die Zuweisungen werden ebenfalls entfernt."
+  },
+  "errors": {
+    "notAuthenticated": "Nicht angemeldet.",
+    "nameRequired": "Name darf nicht leer sein.",
+    "invalidName": "Ungültiger Name.",
+    "invalidColor": "Ungültige Farbe.",
+    "nameTaken": "Ein Tag mit diesem Namen existiert bereits.",
+    "renameFailed": "Fehler beim Umbenennen.",
+    "saveFailed": "Fehler beim Speichern.",
+    "deleteFailed": "Fehler beim Löschen."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "emptyTitle": "No drives on this day.",
+  "emptyHint": "No drives, parks, or charging sessions were recorded on this day.",
+  "driveCount": "{count, plural, one {# drive} other {# drives}}",
+  "driveTime": "drive time",
+  "estimated": "estimated",
+  "estimatedLegend": "~ = estimated",
+  "estimatedValueTitle": "estimated value",
+  "vehicleSelectLabel": "Select vehicle",
+  "prevDay": "Previous day",
+  "nextDay": "Next day",
+  "today": "Today",
+  "dateSelectLabel": "Select date",
+  "openCalendar": "Open calendar",
+  "parkedAt": "Parked: {place}",
+  "chargedAt": "Charged: {place}",
+  "chargedShort": "⚡ charged",
+  "sinceTime": "since {time}",
+  "driveInProgress": "Drive in progress…",
+  "classifyGroupLabel": "Classification",
+  "classifyShort": {
+    "unclassified": "Unclass.",
+    "private": "Private",
+    "business": "Business",
+    "commute": "Commute"
+  }
+}

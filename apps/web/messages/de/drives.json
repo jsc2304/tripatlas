@@ -1,0 +1,84 @@
+{
+  "page": {
+    "backToDayView": "Zur Tagesansicht ({date})",
+    "weatherHistoricalNote": "(historisch, Open-Meteo)",
+    "weatherWind": "Wind {speed} km/h",
+    "cardMetrics": "Kennzahlen",
+    "cardRoute": "Route",
+    "cardCourse": "Verlauf",
+    "cardPostProcessing": "Nachbearbeitung",
+    "cardTags": "Tags",
+    "cardCorrectPlaces": "Orte korrigieren",
+    "cardExport": "Export",
+    "estimatedNote": "~ geschätzt (Rated-Range-Delta × Effizienz)",
+    "routePoints": "{count, plural, one {# Punkt} other {# Punkte}} · aufgezeichnet via TeslaMate",
+    "noTrackData": "Keine Trackdaten vorhanden.",
+    "elevationBackgroundNote": "Höhendaten werden im Hintergrund ergänzt…",
+    "auditHistory": "Verlauf"
+  },
+  "metrics": {
+    "distance": "Distanz",
+    "duration": "Dauer",
+    "avgConsumption": "Ø-Verbrauch",
+    "consumedEnergy": "Verbrauchte Energie",
+    "startSoc": "Start-SoC",
+    "endSoc": "End-SoC",
+    "startOdometer": "Km-Stand Start",
+    "endOdometer": "Km-Stand Ende",
+    "ascent": "Höhenmeter bergauf",
+    "descent": "Höhenmeter bergab",
+    "outsideTempAvg": "Außentemperatur Ø",
+    "insideTempAvg": "Innentemperatur Ø",
+    "maxSpeed": "Max. Geschwindigkeit",
+    "maxPower": "Max. Leistung",
+    "maxRegen": "Max. Rekuperation",
+    "startAddress": "Startadresse",
+    "endAddress": "Zieladresse"
+  },
+  "annotationForm": {
+    "classification": "Klassifizierung",
+    "purpose": "Zweck",
+    "customer": "Kunde",
+    "project": "Projekt",
+    "notes": "Notizen",
+    "saving": "Speichert…",
+    "saved": "Gespeichert"
+  },
+  "auditLog": {
+    "noChanges": "Noch keine Änderungen protokolliert."
+  },
+  "chart": {
+    "elevation": "Höhe",
+    "speed": "Tempo",
+    "noData": "Keine Verlaufsdaten vorhanden.",
+    "ariaLabel": "Verlauf der Fahrt: Höhe, SoC und Tempo über der Distanz",
+    "elevationCalcNote": "(berechnet aus GPS + Open-Meteo)",
+    "teslamateElevation": "TeslaMate: ↗ {ascent} m · ↘ {descent} m",
+    "avgMaxSpeed": "Ø Tempo {avg} · Max {max}",
+    "pointIndex": "Punkt {index}"
+  },
+  "placeCorrection": {
+    "start": "Start",
+    "destination": "Ziel",
+    "auto": "Automatisch",
+    "manuallyAssigned": "Manuell zugewiesen",
+    "createFromCoords": "Ort aus diesen Koordinaten anlegen",
+    "errorSaving": "Fehler beim Speichern."
+  },
+  "tagManager": {
+    "noTags": "Noch keine Tags zugewiesen.",
+    "addPlaceholder": "Tag hinzufügen…",
+    "addAriaLabel": "Tag hinzufügen",
+    "removeAriaLabel": "Tag {name} entfernen",
+    "createNew": "„{name}“ neu anlegen",
+    "errorAdding": "Fehler beim Hinzufügen.",
+    "errorRemoving": "Fehler beim Entfernen."
+  },
+  "errors": {
+    "notAuthenticated": "Nicht angemeldet.",
+    "driveNotFound": "Fahrt nicht gefunden.",
+    "invalidInput": "Ungültige Eingabe.",
+    "tagCreateFailed": "Tag konnte nicht angelegt werden.",
+    "tagNotFound": "Tag nicht gefunden."
+  }
+}

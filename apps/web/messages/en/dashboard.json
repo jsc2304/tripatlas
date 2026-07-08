@@ -1,0 +1,50 @@
+{
+  "onboarding": {
+    "title": "Tripatlas is waiting for the first sync",
+    "description": "As soon as the sync worker pulls in the first drive from TeslaMate, your home screen will appear here.",
+    "step1": "Is the <code>worker</code> container running?",
+    "step2": "Is <code>TESLAMATE_DATABASE_URL</code> set correctly (read-only role on the TeslaMate database)?",
+    "step3": "The first sync takes a few minutes depending on drive history — just hang tight.",
+    "diagnoseCta": "Open connection diagnostics",
+    "demoHint": "No car handy? With <compose>docker-compose.demo.yml</compose> (see <docs>docs/demo.md</docs>) you can try Tripatlas with sample data in a few minutes — no real vehicle needed."
+  },
+  "vehicleStatusEmpty": "No vehicle status yet",
+  "vehicleCard": {
+    "drivingNow": "Driving now",
+    "chargingNow": "Charging now",
+    "chargingNowWithEnergy": "Charging now · {energy}",
+    "parked": "Parked",
+    "parkedSince": "Parked since {time}",
+    "statusUnknown": "Status unknown",
+    "ratedRangeTitle": "Rated range according to the vehicle",
+    "socUnknown": "Charge level unknown",
+    "placeUnknown": "Location unknown",
+    "odometerUnknown": "km unknown",
+    "lastUpdated": "last updated {time}",
+    "neverSynced": "never synced"
+  },
+  "tpms": {
+    "title": "Tire pressure",
+    "fl": "FL",
+    "fr": "FR",
+    "rl": "RL",
+    "rr": "RR",
+    "checkWarning": "Check tire pressure"
+  },
+  "stats": {
+    "today": "Today",
+    "thisWeek": "This week",
+    "lastCharge": "Last charge",
+    "unclassified": "Unclassified",
+    "driveCount": "{count, plural, one {# drive} other {# drives}}",
+    "noData": "No data",
+    "classifyNow": "classify now",
+    "allDone": "All done",
+    "importedExtra": "plus {count} historical (import)"
+  },
+  "recentDrives": {
+    "title": "Recent drives",
+    "empty": "No drives yet",
+    "dayViewCta": "Go to day view"
+  }
+}

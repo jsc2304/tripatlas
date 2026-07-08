@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "Journeys",
+    "subtitle": "Bundle and analyze drives and charging stops into journeys.",
+    "newJourney": "New journey",
+    "empty": {
+      "title": "No journeys yet.",
+      "hint": "Create a journey with a time range — drives and charging stops are assigned automatically."
+    },
+    "driveCount": "{count, plural, one {# drive} other {# drives}}",
+    "chargeCount": "{count, plural, one {# charging stop} other {# charging stops}}"
+  },
+  "type": {
+    "vacation": "Vacation",
+    "business_trip": "Business trip",
+    "roadtrip": "Road trip",
+    "other": "Other"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "e.g. Weekend in Chur",
+    "type": "Type",
+    "startTime": "From",
+    "endTime": "To",
+    "color": "Color",
+    "colorAriaLabel": "Color {color}",
+    "description": "Description",
+    "descriptionPlaceholder": "optional",
+    "saving": "Saving…"
+  },
+  "editTitle": "Edit journey",
+  "detail": {
+    "allJourneys": "All journeys",
+    "export": "Export",
+    "kpi": {
+      "totalDistance": "Total distance",
+      "driveTime": "Drive time",
+      "chargeTime": "Charge time",
+      "avgConsumption": "Avg. consumption",
+      "consumedEnergy": "Energy consumed",
+      "chargedEnergy": "Energy charged",
+      "chargeStops": "Charging stops",
+      "socMinMax": "SoC min/max",
+      "cost": "Cost",
+      "partiallyEstimated": "partly estimated",
+      "costPerKm": "{value} / 100 km",
+      "incomplete": "incomplete",
+      "socRange": "Start {start} % → End {end} %"
+    },
+    "incompleteCostNote": "Some charging sessions had no cost recorded; the total may be incomplete.",
+    "itemsHeading": "Drives & charging stops",
+    "noItems": "No drives or charging stops in this journey.",
+    "add": "Add",
+    "addHint": "Drives and charging stops around the time range (± 3 days) that aren't in the journey.",
+    "noCandidates": "No further drives or charging stops nearby.",
+    "previouslyRemoved": "previously removed",
+    "addAriaLabel": "Add to journey",
+    "remove": "Remove"
+  },
+  "deleteConfirm": "Really delete journey \"{name}\"? The associations will be removed; the drives and charging stops themselves remain.",
+  "deleteError": "Failed to delete.",
+  "itemError": "Error.",
+  "chargingSession": "Charging session",
+  "errors": {
+    "invalidColor": "Invalid color.",
+    "nameRequired": "Name must not be empty.",
+    "windowRequired": "Time range (from/to) is required.",
+    "rangeInvalid": "The start must be before the end.",
+    "notAuthenticated": "Not signed in.",
+    "invalidInput": "Invalid input.",
+    "notFound": "Journey not found."
+  }
+}

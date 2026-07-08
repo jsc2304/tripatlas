@@ -1,0 +1,24 @@
+{
+  "classification": {
+    "unclassified": "Unclassified",
+    "private": "Private",
+    "business": "Business",
+    "commute": "Commute"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "close": "Close",
+    "apply": "Apply",
+    "create": "Create",
+    "search": "Search"
+  },
+  "state": {
+    "loading": "Loading …",
+    "error": "Something went wrong",
+    "none": "—"
+  }
+}

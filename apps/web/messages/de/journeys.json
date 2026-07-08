@@ -1,0 +1,73 @@
+{
+  "list": {
+    "title": "Reisen",
+    "subtitle": "Fahrten und Ladestopps zu Reisen bündeln und auswerten.",
+    "newJourney": "Neue Reise",
+    "empty": {
+      "title": "Noch keine Reisen angelegt.",
+      "hint": "Lege eine Reise mit Zeitraum an — Fahrten und Ladestopps werden automatisch zugeordnet."
+    },
+    "driveCount": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+    "chargeCount": "{count, plural, one {# Ladestopp} other {# Ladestopps}}"
+  },
+  "type": {
+    "vacation": "Urlaub",
+    "business_trip": "Geschäftsreise",
+    "roadtrip": "Roadtrip",
+    "other": "Sonstiges"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "z. B. Wochenende Chur",
+    "type": "Typ",
+    "startTime": "Von",
+    "endTime": "Bis",
+    "color": "Farbe",
+    "colorAriaLabel": "Farbe {color}",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "optional",
+    "saving": "Speichert…"
+  },
+  "editTitle": "Reise bearbeiten",
+  "detail": {
+    "allJourneys": "Alle Reisen",
+    "export": "Export",
+    "kpi": {
+      "totalDistance": "Gesamtkilometer",
+      "driveTime": "Fahrzeit",
+      "chargeTime": "Ladezeit",
+      "avgConsumption": "Ø-Verbrauch",
+      "consumedEnergy": "Verbrauchte Energie",
+      "chargedEnergy": "Geladene Energie",
+      "chargeStops": "Ladestopps",
+      "socMinMax": "SoC min/max",
+      "cost": "Kosten",
+      "partiallyEstimated": "teilw. geschätzt",
+      "costPerKm": "{value} / 100 km",
+      "incomplete": "unvollständig",
+      "socRange": "Start {start} % → Ende {end} %"
+    },
+    "incompleteCostNote": "Einzelne Ladevorgänge hatten keine Kostenangabe; Summe ggf. unvollständig.",
+    "itemsHeading": "Fahrten & Ladestopps",
+    "noItems": "Keine Fahrten oder Ladestopps in dieser Reise.",
+    "add": "Hinzufügen",
+    "addHint": "Fahrten und Ladestopps im Umfeld des Zeitraums (± 3 Tage), die nicht in der Reise sind.",
+    "noCandidates": "Keine weiteren Fahrten oder Ladestopps im Umfeld.",
+    "previouslyRemoved": "zuvor entfernt",
+    "addAriaLabel": "Zur Reise hinzufügen",
+    "remove": "Entfernen"
+  },
+  "deleteConfirm": "Reise „{name}\" wirklich löschen? Die Zuordnungen werden entfernt; die Fahrten und Ladestopps selbst bleiben erhalten.",
+  "deleteError": "Fehler beim Löschen.",
+  "itemError": "Fehler.",
+  "chargingSession": "Ladevorgang",
+  "errors": {
+    "invalidColor": "Ungültige Farbe.",
+    "nameRequired": "Name darf nicht leer sein.",
+    "windowRequired": "Zeitraum (von/bis) ist erforderlich.",
+    "rangeInvalid": "Der Beginn muss vor dem Ende liegen.",
+    "notAuthenticated": "Nicht angemeldet.",
+    "invalidInput": "Ungültige Eingabe.",
+    "notFound": "Reise nicht gefunden."
+  }
+}

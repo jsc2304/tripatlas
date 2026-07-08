@@ -1,0 +1,14 @@
+node_modules
+.next
+dist
+.env
+.env.*
+!.env.example
+.DS_Store
+*.tsbuildinfo
+coverage
+docs/incoming/
+docs/monetarisierung.md
+docs/dev-log.md
+docs/m24-tessie-import-spec.md
+docs/tff-post-entwurf.md

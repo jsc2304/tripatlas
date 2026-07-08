@@ -1,0 +1,87 @@
+{
+  "title": "Route Planner",
+  "experimentalBadge": "Experimental",
+  "subtitle": "Range check based on your personal consumption curve. An honest forecast with disclosed assumptions — no guarantee, no charging-stop planning (coming in a later version).",
+  "baseSource": {
+    "tempBin": "personal consumption curve (temperature range)",
+    "historyAvg": "personal overall average",
+    "vehicleEfficiency": "vehicle efficiency (TeslaMate)",
+    "default": "default assumption (no history yet)"
+  },
+  "arrivalTone": {
+    "comfortable": "Comfortable reserve",
+    "tight": "Tight — low reserve",
+    "critical": "Charging stop required"
+  },
+  "form": {
+    "start": "Start",
+    "currentPosition": "Current vehicle position",
+    "destination": "Destination",
+    "destModePlace": "Saved place",
+    "destModeAddress": "Search address",
+    "destPlaceAriaLabel": "Destination place",
+    "noPlaces": "No places",
+    "startSoc": "Start SoC (%)",
+    "expectedTemp": "Expected outside temperature (°C)",
+    "batteryCapacity": "Battery capacity (kWh)",
+    "capacityHintDerived": "Derived from current range and SoC — adjust if needed.",
+    "capacityHintDefault": "Could not be derived from vehicle data — default value, please check.",
+    "submit": "Check range",
+    "submitPending": "Calculating…",
+    "historyHint": "Only {count, plural, one {# drive} other {# drives}} in history — base value not yet very reliable.",
+    "routingPrefix": "Routing:",
+    "routingDefaultHint": "public OSRM demo server — set up your own server via OSRM_URL.",
+    "routingCustomHint": "your own OSRM server (OSRM_URL)."
+  },
+  "errors": {
+    "missingStart": "Please select a starting point.",
+    "missingDestAddress": "Please select a destination from the address search.",
+    "missingDestPlace": "Please select a destination.",
+    "socRange": "Start SoC must be between 0 and 100.",
+    "tempInvalid": "Please enter a valid outside temperature.",
+    "capacityRange": "Battery capacity must be between 5 and 250 kWh.",
+    "notAuthenticated": "Not signed in.",
+    "invalidInput": "Invalid input.",
+    "routingUnreachable": "Routing service unreachable (timeout or network error). Please try again later.",
+    "routingRateLimited": "The public OSRM demo server rejected the request (rate limit). Please try again later or set up your own server via OSRM_URL.",
+    "routingHttpError": "Routing service responded with HTTP {status}.",
+    "routingBadResponse": "Unexpected response from the routing service.",
+    "routingNoRoute": "No route could be calculated for the start and destination. Please choose different points."
+  },
+  "result": {
+    "distance": "Distance",
+    "duration": "Drive time",
+    "avgSpeed": "Avg. speed",
+    "consumption": "Consumption",
+    "arrivalSoc": "Arrival SoC",
+    "lowArrivalHint": "The predicted arrival SoC is low — a charging stop is required. Automatic charging-stop planning is coming in a later version."
+  },
+  "assumptions": {
+    "summary": "Assumptions & breakdown",
+    "baseConsumption": "Base consumption",
+    "baseConsumptionDesc": "{whPerKm} Wh/km — source: {source}{tempHint}",
+    "tempBinHint": " (~{tempC} °C range)",
+    "temperature": "Temperature",
+    "temperatureDesc": "{tempC} °C (assumed)",
+    "elevation": "Elevation",
+    "elevationDesc": "↑ {ascent} m · ↓ {descent} m",
+    "elevationUnavailable": "unavailable — calculated without elevation term",
+    "speedAdjustment": "Speed adjustment",
+    "speedAdjustmentDesc": "{planned} km/h planned vs. ~{reference} km/h historical → factor {factor}",
+    "capacity": "Battery capacity",
+    "capacityDesc": "{capacity} kWh",
+    "routing": "Routing",
+    "routingPublic": "public OSRM demo server",
+    "routingCustom": "your own OSRM server (OSRM_URL)",
+    "energyBreakdown": "Energy breakdown",
+    "base": "Base",
+    "ascent": "Ascent",
+    "descentRegen": "Downhill regeneration",
+    "total": "Total",
+    "footer": "Experimental forecast based on assumptions (driving style, wind, load, tires, and climate control are not accounted for). Plan a reserve."
+  },
+  "destinationSearch": {
+    "placeholder": "Search destination address…",
+    "searching": "Searching…"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Reports",
+  "subtitle": "Monatsreport nach Klassifizierung.",
+  "exportCsv": "CSV exportieren",
+  "exportPdf": "PDF exportieren",
+  "total": "Gesamt",
+  "driveCountLabel": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+  "incompleteDataHint": "Einzelne Fahrten hatten unvollständige Distanzdaten; Summen ggf. unvollständig.",
+  "table": {
+    "date": "Datum",
+    "time": "Zeit",
+    "route": "Start → Ziel",
+    "km": "Km",
+    "classification": "Klassifizierung",
+    "empty": "Keine Fahrten für diesen Zeitraum und diese Klassifizierung."
+  },
+  "filters": {
+    "prevMonth": "Vorheriger Monat",
+    "nextMonth": "Nächster Monat",
+    "selectMonth": "Monat wählen"
+  }
+}

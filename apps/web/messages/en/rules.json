@@ -1,0 +1,81 @@
+{
+  "title": "Rules",
+  "subtitle": "Rules classify new drives automatically — e.g. “Home → Office, Mon–Fri” as commute.",
+  "newRule": "New rule",
+  "newTitle": "New rule",
+  "editTitle": "Edit rule",
+  "manualUntouchedNotice": "Rules only touch unclassified drives — your manual changes stay untouched.",
+  "empty": {
+    "title": "No rules created yet.",
+    "hint": "Example: start = Home and destination = Office on Mon–Fri → classify as commute. New drives are then sorted in automatically."
+  },
+  "applyButton": {
+    "label": "Apply now to all unclassified drives",
+    "pending": "Applying…",
+    "open": "{count, plural, one {# drive open} other {# drives open}}",
+    "applied": "{count, plural, one {# drive classified.} other {# drives classified.}}",
+    "none": "No matching drive found — nothing changed.",
+    "error": "Error while applying."
+  },
+  "weekday": {
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "e.g. Commute",
+    "conditionsLegend": "Conditions",
+    "conditionsHint": "All set conditions must match. At least one is required.",
+    "startPlace": "Start place",
+    "endPlace": "Destination",
+    "anyPlace": "— any —",
+    "weekdaysLegend": "Weekdays",
+    "weekdaysHint": "Nothing selected = every day.",
+    "actionsLegend": "Actions",
+    "actionsHint": "What happens on a match? At least one action is required.",
+    "classification": "Classification",
+    "noChange": "— don't change —",
+    "tag": "Tag",
+    "noTag": "— no tag —",
+    "purpose": "Purpose",
+    "optionalPlaceholder": "optional",
+    "customer": "Customer",
+    "project": "Project",
+    "priority": "Priority",
+    "priorityHint": "Lower number wins first.",
+    "enabled": "Rule active",
+    "saving": "Saving…"
+  },
+  "row": {
+    "priorityLabel": "Prio",
+    "enableAria": "Enable rule",
+    "disableAria": "Disable rule",
+    "editAria": "Edit rule",
+    "deleteConfirm": "Really delete rule \"{name}\"?",
+    "errorToggle": "Error while toggling.",
+    "errorSavePriority": "Error while saving.",
+    "errorDelete": "Error while deleting.",
+    "route": "{start} → {end}",
+    "startOnly": "Start: {start}",
+    "endOnly": "Destination: {end}",
+    "placeFallback": "Place #{id}",
+    "purposeBadge": "Purpose: {value}",
+    "customerBadge": "Customer: {value}",
+    "projectBadge": "Project: {value}",
+    "noAction": "No action"
+  },
+  "errors": {
+    "notAuthenticated": "Not signed in.",
+    "nameRequired": "Name must not be empty.",
+    "invalidInput": "Invalid input.",
+    "conditionRequired": "At least one condition (start, destination, or weekdays) must be set.",
+    "actionRequired": "At least one action (classification, tag, purpose, customer, or project) must be set.",
+    "invalidRuleId": "Invalid rule ID.",
+    "ruleNotFound": "Rule not found."
+  }
+}

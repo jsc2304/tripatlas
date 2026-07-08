@@ -1,0 +1,47 @@
+name: Feature request
+description: Suggest an improvement or new capability.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. Please describe the workflow or problem first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or workflow
+      description: What are you trying to do, and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior or UI you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Which workarounds or different designs have you considered?
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Trips and classification
+        - Places and geofences
+        - Reports and exports
+        - Journeys
+        - Charging and analytics
+        - Import
+        - Deployment
+        - Other
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add examples, screenshots, related tools, or implementation notes.

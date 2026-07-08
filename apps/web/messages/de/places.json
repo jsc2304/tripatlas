@@ -1,0 +1,71 @@
+{
+  "title": "Orte",
+  "description": "Places machen Fahrten lesbar — statt Koordinaten zeigt Tripatlas „Zuhause → Kunde Müller“.",
+  "newPlace": "Neuer Ort",
+  "editTitle": "{name} bearbeiten",
+  "empty": {
+    "title": "Noch keine Orte angelegt.",
+    "hint": "Lege Orte an, damit Fahrten statt Koordinaten lesbare Namen zeigen."
+  },
+  "placeTypes": {
+    "home": "Zuhause",
+    "work": "Arbeit",
+    "customer": "Kunde",
+    "charger": "Lader",
+    "other": "Sonstiges"
+  },
+  "list": {
+    "start": "Start",
+    "destination": "Ziel",
+    "charging": "Laden",
+    "parking": "Parken",
+    "radius": "{radius} m Radius",
+    "avgDwellTime": "Ø Standzeit",
+    "totalVampireLoss": "Vampir gesamt",
+    "vampireLoss": "{pct} % SoC",
+    "notUsedYet": "Noch nicht verwendet."
+  },
+  "addressSearch": {
+    "placeholder": "Adresse suchen…",
+    "searching": "Suche…"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "z. B. Kunde Müller",
+    "type": "Typ",
+    "searchAddress": "Adresse suchen",
+    "searchAddressHint": "Sucht über OpenStreetMap (Nominatim). Auswahl setzt Position und Adresse unten.",
+    "mapHint": "Klick auf die Karte oder Pin ziehen, um die Position zu setzen. Kartendaten ©",
+    "latitude": "Breitengrad (lat)",
+    "longitude": "Längengrad (lon)",
+    "radius": "Radius",
+    "radiusValue": "{radius} m",
+    "address": "Adresse",
+    "optionalPlaceholder": "optional",
+    "electricityPrice": "Strompreis pro kWh",
+    "currency": "Währung",
+    "electricityPriceHint": "Für automatische Ladekosten an diesem Ort — z. B. Zuhause 0,32 €/kWh.",
+    "submitting": "Speichert…"
+  },
+  "dangerZone": {
+    "title": "Gefahrenbereich",
+    "usage": "Verwendet in {count} Fahrten/Ladevorgängen/Parkvorgängen."
+  },
+  "delete": {
+    "button": "Ort löschen",
+    "deleting": "Löscht…",
+    "confirmSimple": "Ort \"{name}\" wirklich löschen?",
+    "confirmWithUsage": "Ort \"{name}\" wirklich löschen? Er ist {count}x verwendet — die Zuordnungen werden auf „unbekannt\" zurückgesetzt und alle Fahrten/Ladevorgänge/Parkvorgänge neu abgeglichen.",
+    "error": "Fehler beim Löschen."
+  },
+  "errors": {
+    "notAuthenticated": "Nicht angemeldet.",
+    "nameRequired": "Name darf nicht leer sein.",
+    "invalidElectricityPrice": "Ungültiger Strompreis.",
+    "invalidCurrency": "Währung muss aus 3 Buchstaben bestehen.",
+    "priceMustBePositive": "Strompreis muss größer als 0 sein.",
+    "currencyRequired": "Bitte eine Währung angeben, wenn ein Strompreis erfasst wird.",
+    "invalidInput": "Ungültige Eingabe.",
+    "placeNotFound": "Ort nicht gefunden."
+  }
+}

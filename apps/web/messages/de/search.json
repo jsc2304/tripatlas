@@ -1,0 +1,29 @@
+{
+  "title": "Suche",
+  "subtitle": "Fahrten und Ladevorgänge nach Ort, Kunde, Projekt oder Tag finden.",
+  "placeholder": "Suche nach Ort, Kunde, Projekt, Zweck, Notiz oder Tag…",
+  "from": "Von",
+  "to": "Bis",
+  "type": {
+    "drives": "Fahrten",
+    "charges": "Laden",
+    "all": "Alle"
+  },
+  "emptyPrompt": {
+    "title": "Wonach suchst du?",
+    "hint": "Gib einen Suchbegriff ein oder setze einen Filter — zum Beispiel einen Ort, einen Kunden, ein Projekt oder einen Zeitraum."
+  },
+  "noVehicle": "Kein Fahrzeug vorhanden.",
+  "noResults": {
+    "title": "Keine Ergebnisse gefunden.",
+    "hint": "Tipp: Filter lockern oder den Suchbegriff kürzen."
+  },
+  "truncatedHint": "…weitere Ergebnisse, Filter verfeinern",
+  "summaryDrives": "{count, plural, one {# Fahrt} other {# Fahrten}}",
+  "summaryCharges": "{count, plural, one {# Ladevorgang} other {# Ladevorgänge}}",
+  "matchLabel": "Treffer: {hint}",
+  "matchFieldPlace": "Ort",
+  "matchFieldTag": "Tag",
+  "matchFieldStartPlace": "Startort",
+  "matchFieldEndPlace": "Zielort"
+}

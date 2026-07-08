@@ -1,0 +1,123 @@
+# Tripatlas — demo stack (docker-compose.demo.yml).
+#
+# Self-contained: NO real Tesla or TeslaMate installation needed. Spins up a
+# fake TeslaMate database, seeds it once with ~6 weeks of synthetic fixture
+# data (Zurich area, see dev/fixtures/seed.ts), then runs the normal
+# migrate → worker → web pipeline against it, exactly like a real
+# deployment. `docker compose -f docker-compose.demo.yml up --build` gets
+# you a FILLED app in a couple of minutes. Full runbook: docs/demo.md.
+#
+# Every credential below is a hardcoded DEMO-ONLY value, clearly not meant
+# for anything but this throwaway stack — never reuse them for a real
+# deployment. Use docker-compose.yml + .env for that instead.
+
+services:
+  tripatlas-db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tripatlas
+      POSTGRES_PASSWORD: tripatlas-demo
+      POSTGRES_DB: tripatlas
+    volumes:
+      - tripatlas-demo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tripatlas"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  teslamate-db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: teslamate
+      POSTGRES_PASSWORD: teslamate-demo
+      POSTGRES_DB: teslamate
+    volumes:
+      - teslamate-demo-db-data:/var/lib/postgresql/data
+      # Schema-only init (no real TeslaMate app runs here) — same file the
+      # local dev stack uses, see docker-compose.dev.yml.
+      - ./dev/fixtures/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teslamate"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # One-shot: fills teslamate-db with synthetic fixture data, then exits.
+  # See dev/fixtures/Dockerfile for why this is a standalone image instead of
+  # a pnpm-workspace build.
+  seed:
+    build:
+      context: ./dev/fixtures
+      dockerfile: Dockerfile
+    image: tripatlas-fixtures:demo
+    restart: "no"
+    environment:
+      TESLAMATE_DATABASE_URL: postgres://teslamate:teslamate-demo@teslamate-db:5432/teslamate
+    depends_on:
+      teslamate-db:
+        condition: service_healthy
+
+  migrate:
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+    image: tripatlas-worker:demo
+    command: ["node", "dist/migrate.js"]
+    restart: "no"
+    environment:
+      DATABASE_URL: postgres://tripatlas:tripatlas-demo@tripatlas-db:5432/tripatlas
+    depends_on:
+      tripatlas-db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    image: tripatlas-web:demo
+    restart: unless-stopped
+    ports:
+      # Already running a real Tripatlas stack on :3000 on this host? Edit
+      # this line to e.g. "3100:3000" — no .env indirection here on purpose,
+      # this file is meant to just work with a single command.
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://tripatlas:tripatlas-demo@tripatlas-db:5432/tripatlas
+      APP_TIMEZONE: Europe/Zurich
+      INITIAL_ADMIN_PASSWORD: demo1234
+      # Set here too (unlike docker-compose.yml, where it's optional) so the
+      # Settings → Diagnose "TeslaMate direkt testen" button also works out
+      # of the box in the demo.
+      TESLAMATE_DATABASE_URL: postgres://teslamate:teslamate-demo@teslamate-db:5432/teslamate
+    depends_on:
+      tripatlas-db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  worker:
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+    image: tripatlas-worker:demo
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://tripatlas:tripatlas-demo@tripatlas-db:5432/tripatlas
+      TESLAMATE_DATABASE_URL: postgres://teslamate:teslamate-demo@teslamate-db:5432/teslamate
+      # Short interval so the demo fills up fast instead of the production
+      # default of 60s.
+      SYNC_INTERVAL_SECONDS: 15
+    depends_on:
+      tripatlas-db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+      seed:
+        condition: service_completed_successfully
+
+volumes:
+  tripatlas-demo-db-data:
+  teslamate-demo-db-data:

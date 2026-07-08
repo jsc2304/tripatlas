@@ -1,0 +1,84 @@
+{
+  "page": {
+    "backToDayView": "Back to day view ({date})",
+    "weatherHistoricalNote": "(historical, Open-Meteo)",
+    "weatherWind": "Wind {speed} km/h",
+    "cardMetrics": "Metrics",
+    "cardRoute": "Route",
+    "cardCourse": "Course",
+    "cardPostProcessing": "Post-processing",
+    "cardTags": "Tags",
+    "cardCorrectPlaces": "Correct places",
+    "cardExport": "Export",
+    "estimatedNote": "~ estimated (rated range delta × efficiency)",
+    "routePoints": "{count, plural, one {# point} other {# points}} · recorded via TeslaMate",
+    "noTrackData": "No track data available.",
+    "elevationBackgroundNote": "Elevation data is being filled in in the background…",
+    "auditHistory": "History"
+  },
+  "metrics": {
+    "distance": "Distance",
+    "duration": "Duration",
+    "avgConsumption": "Avg. consumption",
+    "consumedEnergy": "Energy consumed",
+    "startSoc": "Start SoC",
+    "endSoc": "End SoC",
+    "startOdometer": "Odometer (start)",
+    "endOdometer": "Odometer (end)",
+    "ascent": "Elevation gain",
+    "descent": "Elevation loss",
+    "outsideTempAvg": "Avg. outside temp.",
+    "insideTempAvg": "Avg. inside temp.",
+    "maxSpeed": "Max. speed",
+    "maxPower": "Max. power",
+    "maxRegen": "Max. regen",
+    "startAddress": "Start address",
+    "endAddress": "Destination address"
+  },
+  "annotationForm": {
+    "classification": "Classification",
+    "purpose": "Purpose",
+    "customer": "Customer",
+    "project": "Project",
+    "notes": "Notes",
+    "saving": "Saving…",
+    "saved": "Saved"
+  },
+  "auditLog": {
+    "noChanges": "No changes logged yet."
+  },
+  "chart": {
+    "elevation": "Elevation",
+    "speed": "Speed",
+    "noData": "No course data available.",
+    "ariaLabel": "Course of the drive: elevation, SoC and speed over distance",
+    "elevationCalcNote": "(calculated from GPS + Open-Meteo)",
+    "teslamateElevation": "TeslaMate: ↗ {ascent} m · ↘ {descent} m",
+    "avgMaxSpeed": "Avg. speed {avg} · Max {max}",
+    "pointIndex": "Point {index}"
+  },
+  "placeCorrection": {
+    "start": "Start",
+    "destination": "Destination",
+    "auto": "Automatic",
+    "manuallyAssigned": "Manually assigned",
+    "createFromCoords": "Create a place from these coordinates",
+    "errorSaving": "Error saving."
+  },
+  "tagManager": {
+    "noTags": "No tags assigned yet.",
+    "addPlaceholder": "Add tag…",
+    "addAriaLabel": "Add tag",
+    "removeAriaLabel": "Remove tag {name}",
+    "createNew": "Create \"{name}\"",
+    "errorAdding": "Error adding tag.",
+    "errorRemoving": "Error removing tag."
+  },
+  "errors": {
+    "notAuthenticated": "Not signed in.",
+    "driveNotFound": "Drive not found.",
+    "invalidInput": "Invalid input.",
+    "tagCreateFailed": "Could not create tag.",
+    "tagNotFound": "Tag not found."
+  }
+}

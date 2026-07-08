@@ -1,0 +1,29 @@
+{
+  "title": "Search",
+  "subtitle": "Find drives and charging sessions by place, customer, project, or tag.",
+  "placeholder": "Search by place, customer, project, purpose, note, or tag…",
+  "from": "From",
+  "to": "To",
+  "type": {
+    "drives": "Drives",
+    "charges": "Charging",
+    "all": "All"
+  },
+  "emptyPrompt": {
+    "title": "What are you looking for?",
+    "hint": "Enter a search term or set a filter — for example a place, customer, project, or time range."
+  },
+  "noVehicle": "No vehicle available.",
+  "noResults": {
+    "title": "No results found.",
+    "hint": "Tip: loosen the filters or shorten the search term."
+  },
+  "truncatedHint": "…more results, refine the filters",
+  "summaryDrives": "{count, plural, one {# drive} other {# drives}}",
+  "summaryCharges": "{count, plural, one {# charging session} other {# charging sessions}}",
+  "matchLabel": "Match: {hint}",
+  "matchFieldPlace": "Place",
+  "matchFieldTag": "Tag",
+  "matchFieldStartPlace": "Start place",
+  "matchFieldEndPlace": "Destination"
+}

@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1783194737260,
+      "tag": "0000_sour_frank_castle",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1783253296430,
+      "tag": "0001_romantic_ezekiel",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1783263426255,
+      "tag": "0002_natural_beast",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1783277405072,
+      "tag": "0003_unusual_baron_strucker",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1783281344529,
+      "tag": "0004_worried_sprite",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1783428428341,
+      "tag": "0005_stale_maverick",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1783517368570,
+      "tag": "0006_gray_big_bertha",
+      "breakpoints": true
+    }
+  ]
+}

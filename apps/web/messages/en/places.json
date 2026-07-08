@@ -1,0 +1,71 @@
+{
+  "title": "Places",
+  "description": "Places make drives readable — instead of coordinates, Tripatlas shows \"Home → Customer Müller\".",
+  "newPlace": "New place",
+  "editTitle": "Edit {name}",
+  "empty": {
+    "title": "No places yet.",
+    "hint": "Add places so drives show readable names instead of coordinates."
+  },
+  "placeTypes": {
+    "home": "Home",
+    "work": "Work",
+    "customer": "Customer",
+    "charger": "Charger",
+    "other": "Other"
+  },
+  "list": {
+    "start": "Start",
+    "destination": "Destination",
+    "charging": "Charging",
+    "parking": "Parking",
+    "radius": "{radius} m radius",
+    "avgDwellTime": "Avg. idle time",
+    "totalVampireLoss": "Total vampire loss",
+    "vampireLoss": "{pct} % SoC",
+    "notUsedYet": "Not used yet."
+  },
+  "addressSearch": {
+    "placeholder": "Search address…",
+    "searching": "Searching…"
+  },
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "e.g. Customer Müller",
+    "type": "Type",
+    "searchAddress": "Search address",
+    "searchAddressHint": "Searches via OpenStreetMap (Nominatim). Selecting a result sets the position and address below.",
+    "mapHint": "Click the map or drag the pin to set the position. Map data ©",
+    "latitude": "Latitude (lat)",
+    "longitude": "Longitude (lon)",
+    "radius": "Radius",
+    "radiusValue": "{radius} m",
+    "address": "Address",
+    "optionalPlaceholder": "optional",
+    "electricityPrice": "Electricity price per kWh",
+    "currency": "Currency",
+    "electricityPriceHint": "For automatic charging costs at this place — e.g. Home 0.32 €/kWh.",
+    "submitting": "Saving…"
+  },
+  "dangerZone": {
+    "title": "Danger zone",
+    "usage": "Used in {count} drives/charging sessions/parks."
+  },
+  "delete": {
+    "button": "Delete place",
+    "deleting": "Deleting…",
+    "confirmSimple": "Really delete place \"{name}\"?",
+    "confirmWithUsage": "Really delete place \"{name}\"? It is used {count} times — the assignments will be reset to \"unknown\" and all drives/charging sessions/parks will be re-matched.",
+    "error": "Failed to delete."
+  },
+  "errors": {
+    "notAuthenticated": "Not signed in.",
+    "nameRequired": "Name must not be empty.",
+    "invalidElectricityPrice": "Invalid electricity price.",
+    "invalidCurrency": "Currency must be a 3-letter code.",
+    "priceMustBePositive": "Electricity price must be greater than 0.",
+    "currencyRequired": "Please provide a currency when an electricity price is set.",
+    "invalidInput": "Invalid input.",
+    "placeNotFound": "Place not found."
+  }
+}

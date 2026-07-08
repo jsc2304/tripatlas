@@ -1,0 +1,98 @@
+# Tripatlas — production deployment (Docker Compose).
+#
+# Runs the tripatlas app stack (db, one-shot migration, web, sync worker)
+# against an EXISTING TeslaMate installation's Postgres, reached read-only.
+# See README.md "Deployment" for the full runbook.
+#
+# TeslaMate connectivity — two options for TESLAMATE_DATABASE_URL in .env:
+#   (a) Same Docker host, TeslaMate on a shared Docker network:
+#       set TESLAMATE_DATABASE_URL=postgres://tripatlas_ro:...@teslamate-db:5432/teslamate
+#       and uncomment the `networks:` stanzas below (external teslamate_default).
+#   (b) TeslaMate reachable over LAN/VPN (e.g. Tailscale) as a plain host:
+#       set TESLAMATE_DATABASE_URL=postgres://tripatlas_ro:...@teslamate-host.example:5432/teslamate
+#       — no extra network config needed, this is the default assumption below.
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: tripatlas
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: tripatlas
+    volumes:
+      - tripatlas-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tripatlas"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    # No published port — only reachable from other services on this network.
+
+  migrate:
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+    image: tripatlas-worker:latest
+    command: ["node", "dist/migrate.js"]
+    restart: "no"
+    environment:
+      DATABASE_URL: postgres://tripatlas:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/tripatlas
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    image: tripatlas-web:latest
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      DATABASE_URL: postgres://tripatlas:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/tripatlas
+      APP_TIMEZONE: ${APP_TIMEZONE:-Europe/Zurich}
+      INITIAL_ADMIN_PASSWORD: ${INITIAL_ADMIN_PASSWORD:-}
+      # Optional, nur für die Verbindungs-Diagnose in Settings (read-only
+      # Testquery). Im Normalbetrieb liest ausschließlich der Worker die
+      # TeslaMate-DB — dieser Wert kann leer bleiben.
+      TESLAMATE_DATABASE_URL: ${TESLAMATE_DATABASE_URL:-}
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  worker:
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+    image: tripatlas-worker:latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://tripatlas:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/tripatlas
+      TESLAMATE_DATABASE_URL: ${TESLAMATE_DATABASE_URL:?Set TESLAMATE_DATABASE_URL in .env}
+      SYNC_INTERVAL_SECONDS: ${SYNC_INTERVAL_SECONDS:-60}
+    depends_on:
+      db:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    # No published port — sync loop only, no inbound traffic.
+
+volumes:
+  tripatlas-db-data:
+
+# Uncomment if TeslaMate runs on this same Docker host and you want to reach
+# it via its Compose network instead of a LAN/Tailscale host address:
+#
+# networks:
+#   default:
+#     name: tripatlas_default
+#   teslamate:
+#     name: teslamate_default
+#     external: true
+#
+# ...and add `networks: [default, teslamate]` to the `worker` service so it
+# can resolve the TeslaMate db service by its Compose service name.

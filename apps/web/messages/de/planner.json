@@ -1,0 +1,87 @@
+{
+  "title": "Routenplaner",
+  "experimentalBadge": "Experimentell",
+  "subtitle": "Reichweiten-Check auf Basis deiner persönlichen Verbrauchskurve. Eine ehrliche Prognose mit offengelegten Annahmen — keine Garantie, keine Ladestopp-Planung (kommt in einer späteren Version).",
+  "baseSource": {
+    "tempBin": "persönliche Verbrauchskurve (Temperatur-Bereich)",
+    "historyAvg": "persönlicher Gesamtdurchschnitt",
+    "vehicleEfficiency": "Fahrzeug-Effizienz (TeslaMate)",
+    "default": "Standardannahme (noch keine Historie)"
+  },
+  "arrivalTone": {
+    "comfortable": "Komfortable Reserve",
+    "tight": "Knapp — Reserve gering",
+    "critical": "Ladestopp nötig"
+  },
+  "form": {
+    "start": "Start",
+    "currentPosition": "Aktuelle Fahrzeugposition",
+    "destination": "Ziel",
+    "destModePlace": "Eigener Ort",
+    "destModeAddress": "Adresse suchen",
+    "destPlaceAriaLabel": "Ziel-Ort",
+    "noPlaces": "Keine Orte",
+    "startSoc": "Start-SoC (%)",
+    "expectedTemp": "Erwartete Außentemperatur (°C)",
+    "batteryCapacity": "Batteriekapazität (kWh)",
+    "capacityHintDerived": "Aus aktueller Reichweite und SoC hergeleitet — bei Bedarf anpassen.",
+    "capacityHintDefault": "Konnte nicht aus Fahrzeugdaten hergeleitet werden — Standardwert, bitte prüfen.",
+    "submit": "Reichweite prüfen",
+    "submitPending": "Berechne…",
+    "historyHint": "Nur {count, plural, one {# Fahrt} other {# Fahrten}} in der Historie — Basiswert noch wenig belastbar.",
+    "routingPrefix": "Routing:",
+    "routingDefaultHint": "öffentlicher OSRM-Demo-Server — eigenen Server über OSRM_URL hinterlegen.",
+    "routingCustomHint": "eigener OSRM-Server (OSRM_URL)."
+  },
+  "errors": {
+    "missingStart": "Bitte einen Startpunkt wählen.",
+    "missingDestAddress": "Bitte ein Ziel aus der Adresssuche auswählen.",
+    "missingDestPlace": "Bitte ein Ziel wählen.",
+    "socRange": "Start-SoC muss zwischen 0 und 100 liegen.",
+    "tempInvalid": "Bitte eine gültige Außentemperatur angeben.",
+    "capacityRange": "Batteriekapazität muss zwischen 5 und 250 kWh liegen.",
+    "notAuthenticated": "Nicht angemeldet.",
+    "invalidInput": "Ungültige Eingabe.",
+    "routingUnreachable": "Routing-Dienst nicht erreichbar (Zeitüberschreitung oder Netzwerkfehler). Bitte später erneut versuchen.",
+    "routingRateLimited": "Der öffentliche OSRM-Demo-Server hat die Anfrage abgelehnt (Rate-Limit). Bitte etwas später erneut versuchen oder einen eigenen Server über OSRM_URL hinterlegen.",
+    "routingHttpError": "Routing-Dienst antwortete mit HTTP {status}.",
+    "routingBadResponse": "Unerwartete Antwort vom Routing-Dienst.",
+    "routingNoRoute": "Für Start und Ziel konnte keine Route berechnet werden. Bitte andere Punkte wählen."
+  },
+  "result": {
+    "distance": "Distanz",
+    "duration": "Fahrzeit",
+    "avgSpeed": "Ø-Tempo",
+    "consumption": "Verbrauch",
+    "arrivalSoc": "Ankunfts-SoC",
+    "lowArrivalHint": "Der prognostizierte Ankunfts-SoC ist niedrig — ein Ladestopp ist nötig. Automatische Ladestopp-Planung kommt in einer späteren Version."
+  },
+  "assumptions": {
+    "summary": "Annahmen & Aufschlüsselung",
+    "baseConsumption": "Basisverbrauch",
+    "baseConsumptionDesc": "{whPerKm} Wh/km — Quelle: {source}{tempHint}",
+    "tempBinHint": " (~{tempC} °C-Bereich)",
+    "temperature": "Temperatur",
+    "temperatureDesc": "{tempC} °C (angenommen)",
+    "elevation": "Höhenmeter",
+    "elevationDesc": "↑ {ascent} m · ↓ {descent} m",
+    "elevationUnavailable": "nicht verfügbar — ohne Höhenterm gerechnet",
+    "speedAdjustment": "Tempo-Anpassung",
+    "speedAdjustmentDesc": "{planned} km/h geplant vs. ~{reference} km/h historisch → Faktor {factor}",
+    "capacity": "Batteriekapazität",
+    "capacityDesc": "{capacity} kWh",
+    "routing": "Routing",
+    "routingPublic": "öffentlicher OSRM-Demo-Server",
+    "routingCustom": "eigener OSRM-Server (OSRM_URL)",
+    "energyBreakdown": "Energie-Aufschlüsselung",
+    "base": "Basis",
+    "ascent": "Anstieg",
+    "descentRegen": "Rekuperation bergab",
+    "total": "Gesamt",
+    "footer": "Experimentelle Prognose auf Basis von Annahmen (Fahrstil, Wind, Beladung, Reifen, Klima bleiben unberücksichtigt). Reserve einplanen."
+  },
+  "destinationSearch": {
+    "placeholder": "Zieladresse suchen…",
+    "searching": "Suche…"
+  }
+}
