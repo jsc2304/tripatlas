@@ -63,8 +63,11 @@ export function DestinationSearch({
 
   function handleSelect(result: AddressSearchResult) {
     justSelected.current = true;
-    onSelect(result);
+    // Reihenfolge ist tragend: onValueChange invalidiert im Formular die
+    // bisherige Auswahl (setDestAddress(null)) — onSelect muss danach kommen,
+    // sonst wird das gerade gewählte Ziel sofort wieder verworfen.
     onValueChange(result.label);
+    onSelect(result);
     setOpen(false);
     setResults([]);
   }
